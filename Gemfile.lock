@@ -5,6 +5,12 @@ GIT
     authlogic (2.1.6)
       activesupport
 
+GIT
+  remote: git://github.com/ryanb/nifty-generators.git
+  revision: 41f5d07da379adea488ceb772578ec5df2ed6814
+  specs:
+    nifty-generators (0.4.3)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -58,6 +64,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mocha (0.9.10)
+      rake
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -121,6 +129,8 @@ PLATFORMS
 DEPENDENCIES
   authlogic!
   capistrano
+  mocha
+  nifty-generators!
   rails (= 3.0.3)
   rspec (>= 2.0.0.beta.11)
   rspec-rails (>= 2.0.0.beta.11)

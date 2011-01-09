@@ -1,4 +1,10 @@
 Spargris::Application.routes.draw do
+  match 'login',  :to => 'user_sessions#new'
+  match 'logout', :to => 'user_sessions#destroy'
+
+  resources :user_sessions
+  resources :users
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
