@@ -1,31 +1,38 @@
 source 'http://rubygems.org'
 
+# Rails itself
 gem 'rails', '3.0.3'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3-ruby', :require => 'sqlite3'
-
-# Use unicorn as the web server
-# gem 'unicorn'
+#gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
-# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-# gem 'ruby-debug'
-# gem 'ruby-debug19'
+# Useful gems
+gem 'will_paginate', '>= 3.0.pre2'
+#gem 'nokogiri'
+#gem 'icalendar'
+#gem 'delayed_job', :git => 'git://github.com/collectiveidea/delayed_job.git'
 
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
+# Production gems
+group :production do
+   #gem 'mysql'
+end
 
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+# Development gems
+group :development do
+  gem 'ruby-debug19'
+  gem 'sqlite3-ruby'
+end
+
+# Test gems
+group :test do
+  #gem 'launchy'
+  #gem 'steak', '>= 0.4.0.a5'
+  gem 'rspec', '>= 2.0.0.beta.11'
+  gem "rspec-rails", ">= 2.0.0.beta.11"
+  #gem 'factory_girl_rails'
+  #gem 'capybara'
+  #gem 'timecop'
+  #gem 'webmock'
+end
+

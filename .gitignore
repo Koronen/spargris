@@ -1,4 +1,11 @@
 .bundle
+config/database.yml
+config/configuration.yml
+db/schema.rb
+db/*.sql
 db/*.sqlite3
+.DS_Store
+doc/api/*
 log/*.log
 tmp/**/*
+
