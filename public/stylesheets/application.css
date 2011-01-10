@@ -1,0 +1,258 @@
+/* Global */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+body {
+  background-color: #333;
+  color: #eee;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", verdana, geneva, sans-serif; /*verdana, arial, helvetica, sans-serif;*/
+  /*line-height: 0.8em;*/
+}
+
+img {
+  border: none;
+}
+
+/* General */
+
+body, p, ol, ul, td {
+  font-size: 1em;
+}
+
+a, a:visited {
+  color: #ddd;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: #fff;
+}
+
+pre {
+  background-color: #222;
+  padding: 10px;
+  font-size: 11px;
+}
+
+blockquote {
+  border-left: 2px solid #2f2f2f;
+  background-color: #323232;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font: 2em Arial;
+  color: #fff;
+  margin: 0.5em 0em 0.5em 0em;
+}
+
+h2 a {
+  color: #fff;
+  text-decoration:none;
+  border-bottom: 2px solid #222;
+}
+
+h2 a:hover {
+  border-bottom: 2px solid #E13768;
+}
+
+p {
+  margin: 0.5em;
+}
+
+table {
+  background-color: #E13768;
+  margin: 0.2em;
+}
+th, td {
+  padding: 0.1em 0.5em;
+}
+th {
+  background-color: #E13768;
+  color: #fff;
+}
+tr {
+  border-collapse: collapse;
+}
+td {
+  background-color: #333;
+}
+
+/* Header */
+#header {
+  background-color: #E13768;
+}
+
+#header h1 {
+  font-size: 4em;
+  font-family: verdana, arial, helvetica, sans-serif;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.2em 0em 0.2em 0.2em;
+}
+
+#header h1 a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 1em;
+}
+
+#header h1 a:hover {
+  border:none;
+}
+
+/* Navigation */
+#nav {
+  background-color: #E13768;
+}
+
+#nav ul {
+  list-style: none;
+  padding: 0.5em 0em 0.5em 2em;
+}
+
+#nav ul li {
+  display: inline;
+  margin-right: 0.1em;
+}
+
+#nav ul li a {
+  background-color: #333;
+  color: #aaa;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.5em;
+}
+
+#nav ul li a:hover {
+  background: #555;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Sidebar (not used atm) */
+/*
+#sidebar {
+  width: 270px;
+  float: right;
+  background: #222;
+}
+
+#sidebar a {
+  color: #fff;
+}
+
+#sidebar a:hover {
+  text-decoration:none;
+  border:none;
+}
+
+#sidebar h2 {
+  font:150% Trebuchet MS;
+  color:#fff;
+}
+
+#sidebar ul {
+  margin-left:45px;
+}
+
+#sidebar input {
+  margin:0 0 0 30px;
+  background:#E13768;
+  border:1px solid #d02657;
+  font:100% Verdana;
+  color:#fff;
+  padding:4px;
+  width:200px;
+}
+*/
+
+/* Content */
+#content {
+  /*margin-right: 270px;*/
+  padding: 1em;
+}
+
+#flash_notice {
+  border: 0.1em #fff dotted;
+  background-color: #555;
+  color: #fff;
+  padding: 0.3em;
+}
+
+#flash_error {
+  border: 0.1em #fff dotted;
+  background-color: #555;
+  color: #fff;
+  padding: 0.3em;
+}
+
+ul.checkbox-list {
+  list-style: none;
+}
+
+ul.checkbox-list li {
+  display: inline;
+  margin: 0.1em;
+}
+
+/* Footer (not used atm) */
+/*
+#footer {
+  border-top:2px solid #111;
+  background:#222;
+  padding:15px;
+}
+
+#footer a {
+  color:#ccc;
+}
+*/
+
+/* Rails errors */
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+

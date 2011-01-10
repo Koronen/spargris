@@ -6,6 +6,12 @@ GIT
       activesupport
 
 GIT
+  remote: git://github.com/mbleigh/acts-as-taggable-on.git
+  revision: 3d707c25d45b5cc680cf3623d15ff59856457ea9
+  specs:
+    acts-as-taggable-on (2.0.6)
+
+GIT
   remote: git://github.com/ryanb/nifty-generators.git
   revision: 41f5d07da379adea488ceb772578ec5df2ed6814
   specs:
@@ -127,6 +133,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on!
   authlogic!
   capistrano
   mocha
