@@ -2,11 +2,6 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   protect_from_forgery
 
-  # See ActionController::Base for details
-  # Uncomment this to filter the contents of submitted sensitive data parameters
-  # from your application log (in this case, all fields with names like "password").
-  filter_parameter_logging :password
-
   helper_method :current_user
 
   private
