@@ -1,4 +1,6 @@
 Spargris::Application.routes.draw do
+  resources :transactions
+
   resources :locations
 
   resources :vendors
