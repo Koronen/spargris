@@ -1,4 +1,6 @@
 Spargris::Application.routes.draw do
+  resources :vendors
+
   resources :accounts
 
   get "frontpage/index"
