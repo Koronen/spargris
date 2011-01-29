@@ -22,7 +22,7 @@
           <li><%= link_to 'Affärer', vendors_url %></li>
           <li><%= link_to 'Budget', root_url %></li>
           <li><%= link_to 'Statistik', root_url %></li>
-          <% if current_user %>
+          <% if logged_in? %>
             <li style="float: right;"><%= link_to "Logout", logout_path %></li>
             <li style="float: right;"><%= link_to "Settings", edit_user_path(current_user) %></li>
             <li style="float: right;"><%= link_to "#{current_user.username}'s dashboard", edit_user_path(current_user) %></li>
