@@ -1,4 +1,6 @@
 Spargris::Application.routes.draw do
+  resources :accounts
+
   get "frontpage/index"
 
   match 'login',  :to => 'user_sessions#new'
