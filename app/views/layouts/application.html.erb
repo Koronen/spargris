@@ -17,12 +17,13 @@
       <div id="nav">
         <ul>
           <li><%= link_to 'Hem', root_url %></li>
-          <li><%= link_to 'Konton', accounts_url %></li>
-          <li><%= link_to 'Transaktioner', root_url %></li>
-          <li><%= link_to 'Affärer', vendors_url %></li>
-          <li><%= link_to 'Budget', root_url %></li>
-          <li><%= link_to 'Statistik', root_url %></li>
           <% if logged_in? %>
+            <li><%= link_to 'Konton', accounts_url %></li>
+            <li><%= link_to 'Transaktioner', transactions_url %></li>
+            <li><%= link_to 'Affärer', vendors_url %></li>
+            <li><%= link_to 'Budget', root_url %></li>
+            <li><%= link_to 'Statistik', root_url %></li>
+
             <li style="float: right;"><%= link_to "Logout", logout_path %></li>
             <li style="float: right;"><%= link_to "Settings", edit_user_path(current_user) %></li>
             <li style="float: right;"><%= link_to "#{current_user.username}'s dashboard", edit_user_path(current_user) %></li>
