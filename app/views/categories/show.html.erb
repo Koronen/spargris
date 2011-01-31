@@ -1,15 +1,8 @@
+<%- title 'Kategorier' %>
+<h2><%= @category.name %></h2>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @category.name %>
-</p>
-
-<p>
-  <b>Parent:</b>
-  <%= @category.parent_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<%= link_to 'Ändra', edit_category_path(@category) %> |
+<%= link_to 'Ta bort', @category, :confirm => 'Säker?', :method => :delete %> |
+<%= link_to 'Tillbaka', categories_path %>
