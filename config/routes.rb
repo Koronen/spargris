@@ -9,7 +9,8 @@ Spargris::Application.routes.draw do
 
   resources :accounts
 
-  get "frontpage/index"
+  #get 'frontpage/index', :as => :frontpage
+  match 'dashboard', :to => 'dashboard#index', :as => :dashboard
 
   match 'login',  :to => 'user_sessions#new'
   match 'logout', :to => 'user_sessions#destroy'
