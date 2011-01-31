@@ -41,6 +41,7 @@ class TransactionsController < ApplicationController
   # POST /transactions.xml
   def create
     @transaction = Transaction.new(params[:transaction])
+    @transaction.user = current_user
 
     respond_to do |format|
       if @transaction.save
