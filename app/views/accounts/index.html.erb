@@ -1,23 +1,12 @@
-<h1>Listing accounts</h1>
+<%- title 'Konton' %>
+<h2>Dina konton</h2>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @accounts.each do |account| %>
-  <tr>
-    <td><%= account.name %></td>
-    <td><%= link_to 'Show', account %></td>
-    <td><%= link_to 'Edit', edit_account_path(account) %></td>
-    <td><%= link_to 'Destroy', account, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
+<ul>
+<%- @accounts.each do |account| %>
+  <li><%= link_to account.name, account %></li>
+<%- end %>
+</ul>
 
 <br />
 
-<%= link_to 'New Account', new_account_path %>
+<%= link_to 'Nytt konto', new_account_path %>

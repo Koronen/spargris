@@ -1,10 +1,8 @@
+<%- title 'Konton' %>
+<h2><%= @account.name %></h2>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @account.name %>
-</p>
-
-
-<%= link_to 'Edit', edit_account_path(@account) %> |
-<%= link_to 'Back', accounts_path %>
+<%= link_to 'Ändra', edit_account_path(@account) %> |
+<%= link_to 'Ta bort', @account, :confirm => 'Säker?', :method => :delete %> |
+<%= link_to 'Tillbaka', accounts_path %>

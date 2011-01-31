@@ -1,6 +1,7 @@
-<h1>Editing account</h1>
+<%- title 'Konton' %>
+<h2>Ändra konto</h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @account %> |
-<%= link_to 'Back', accounts_path %>
+<%= link_to 'Ändra', edit_account_path(@account) %> |
+<%= link_to 'Tillbaka', accounts_path %>
