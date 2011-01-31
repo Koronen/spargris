@@ -1,4 +1,6 @@
 Spargris::Application.routes.draw do
+  resources :categories
+
   resources :transactions
 
   resources :locations

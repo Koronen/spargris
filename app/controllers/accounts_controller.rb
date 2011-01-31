@@ -2,7 +2,7 @@ class AccountsController < ApplicationController
   # GET /accounts
   # GET /accounts.xml
   def index
-    @accounts = Account.all
+    @accounts = current_user.accounts
 
     respond_to do |format|
       format.html # index.html.erb
