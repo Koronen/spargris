@@ -3,7 +3,7 @@
 
 <ul>
 <%- @accounts.each do |account| %>
-  <li><%= link_to account.name, account %></li>
+    <li><%= link_to account.name, account %> (<%= number_to_currency account.transactions.sum(:amount) %>)</li>
 <%- end %>
 </ul>
 

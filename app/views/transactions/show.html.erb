@@ -1,20 +1,13 @@
+<%- title "Transaktion" %>
 <p id="notice"><%= notice %></p>
+<h2>Transaktion #<%= @transaction.id %></h2>
 
-<p>
-  <b>Timestamp:</b>
-  <%= @transaction.timestamp %>
-</p>
+<h3><%= @transaction.amount %> SEK</h3>
+<p><i><%= @transaction.timestamp %></i></p>
+<%- if @transaction.comment %>
+<p><%= @transaction.comment %><p>
+<%- end %>
 
-<p>
-  <b>Amount:</b>
-  <%= @transaction.amount %>
-</p>
-
-<p>
-  <b>Comment:</b>
-  <%= @transaction.comment %>
-</p>
-
-
-<%= link_to 'Edit', edit_transaction_path(@transaction) %> |
-<%= link_to 'Back', transactions_path %>
+<%= link_to 'Ändra', edit_transaction_path(@transaction) %> |
+<%= link_to 'Ta bort', @transaction, :confirm => 'Säker?', :method => :delete %>
+<%= link_to 'Tillbaka', transactions_path %>

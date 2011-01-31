@@ -1,23 +1,20 @@
-<h1>Listing transactions</h1>
+<%- title "Transaktion" %>
+<h2>Listar transaktioner</h2>
 
 <table>
   <tr>
     <th>Timestamp</th>
     <th>Amount</th>
+    <th>duu</th>
     <th>Comment</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @transactions.each do |transaction| %>
   <tr>
-    <td><%= transaction.timestamp %></td>
-    <td><%= transaction.amount %></td>
-    <td><%= transaction.comment %></td>
-    <td><%= link_to 'Show', transaction %></td>
-    <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
-    <td><%= link_to 'Destroy', transaction, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to transaction.timestamp, transaction %></td>
+    <td><%= number_to_currency(transaction.amount) %></td>
+    <td><%= link_to(transaction.vendor.name, transaction.vendor) if transaction.vendor %> @ <%= link_to(transaction.location.name, transaction.location) if transaction.location %></td>
+    <td><%= transaction.comment if transaction.comment %></td>
   </tr>
 <% end %>
 </table>
