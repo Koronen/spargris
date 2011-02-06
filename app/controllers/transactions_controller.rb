@@ -1,6 +1,8 @@
 class TransactionsController < ApplicationController
   before_filter :require_login
 
+  auto_complete_for :vendor, :name
+
   # GET /transactions
   # GET /transactions.xml
   def index
@@ -44,6 +46,7 @@ class TransactionsController < ApplicationController
   def create
     @transaction = Transaction.new(params[:transaction])
     @transaction.user = current_user
+    @transaction.vendor = Vendor.find_or_create_by_name(params[:vendor][:name]) unless params[:vendor][:name].blank?
 
     respond_to do |format|
       if @transaction.save
@@ -60,6 +63,7 @@ class TransactionsController < ApplicationController
   # PUT /transactions/1.xml
   def update
     @transaction = Transaction.find(params[:id])
+    @transaction.vendor = Vendor.find_or_create_by_name(params[:vendor][:name]) unless params[:vendor][:name].blank?
 
     respond_to do |format|
       if @transaction.update_attributes(params[:transaction])

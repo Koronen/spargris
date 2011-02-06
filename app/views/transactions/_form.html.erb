@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :vendor %><br />
-    <%= collection_select(:transaction, :vendor_id, Vendor.all.sort_by(&:name), :id, :name, options = {:prompt => "-Välj en affär-"}) %>
+    <%= text_field_with_auto_complete :vendor, :name, :value => (@transaction.vendor.name if @transaction.vendor) %>
   </div>
   <div class="field">
     <%= f.label :location %><br />

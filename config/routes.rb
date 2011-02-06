@@ -2,6 +2,7 @@ Spargris::Application.routes.draw do
   resources :categories
 
   resources :transactions
+  match 'transactions/auto_complete_for_vendor_name'
 
   resources :locations
 
