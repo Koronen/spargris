@@ -212,3 +212,20 @@
       # default value for :prompt => true in FormOptionsHelper
       prompt: "Välj"
 
+# Application specific
+  application:
+    name: "Spargris"
+    unnamed: "Namnlös"
+    home: "Hem"
+    accounts: "Konton"
+    transactions: "Transaktioner"
+    vendors: "Affärer"
+    categories: "Kategorier"
+    budget: "Budget"
+    stats: "Statistik"
+    logout: "Logga ut"
+    settings: "Inställningar"
+    dashboard: "Instrumentbräda"
+    login: "Logga in"
+    register: "Registrera"
+

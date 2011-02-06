@@ -2,4 +2,18 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+# Application specific
+  application:
+    name: "Spargris"
+    unnamed: "Unnamed"
+    home: "Home"
+    transactions: "Transactions"
+    vendors: "Vendors"
+    categories: "Categories"
+    budget: "Budget"
+    stats: "Statistics"
+    logout: "Logout"
+    settings: "Settings"
+    dashboard: "Dashboard"
+    login: "Login"
+    register: "Register"

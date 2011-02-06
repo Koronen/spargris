@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery
 
+  before_filter :set_user_language
   before_filter :set_user_time_zone
 
   private
@@ -20,6 +21,10 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     !current_user.nil?
+  end
+
+  def set_user_language
+    I18n.locale = current_user.language if logged_in?
   end
 
   def set_user_time_zone
