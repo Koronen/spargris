@@ -190,9 +190,16 @@ td {
   padding: 0.3em;
 }
 
-#flash_error {
+#flash_warning {
   border: 0.1em #fff dotted;
-  background-color: #555;
+  background-color: #ffcd00;
+  color: #fff;
+  padding: 0.3em;
+}
+
+#flash_error {
+  border: 0.1em #f00000 dotted;
+  background-color: #800000;
   color: #fff;
   padding: 0.3em;
 }

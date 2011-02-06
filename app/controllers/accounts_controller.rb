@@ -1,4 +1,6 @@
 class AccountsController < ApplicationController
+  before_filter :require_login
+
   # GET /accounts
   # GET /accounts.xml
   def index

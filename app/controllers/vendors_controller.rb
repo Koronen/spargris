@@ -1,4 +1,6 @@
 class VendorsController < ApplicationController
+  before_filter :require_login
+
   # GET /vendors
   # GET /vendors.xml
   def index

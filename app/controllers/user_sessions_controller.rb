@@ -6,8 +6,16 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
+      # notify the user of successful login
       flash[:notice] = "Successfully logged in."
-      redirect_to root_url
+
+      # redirect to saved url if set, root_url otherwise
+      if return_to = session[:return_to]
+        session[:return_to] = nil
+        redirect_to return_to
+      else
+        redirect_to root_url
+      end
     else
       render :action => 'new'
     end
