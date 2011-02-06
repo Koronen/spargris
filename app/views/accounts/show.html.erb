@@ -1,5 +1,4 @@
 <%- title 'Konton' %>
-<p id="notice"><%= notice %></p>
 <h2><%= @account.name %></h2>
 <h3>Balans: <%= number_to_currency @account.transactions.sum(:amount) %></h3>
 
