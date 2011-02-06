@@ -1,13 +1,16 @@
 <%- title "Transaktion" %>
-<p id="notice"><%= notice %></p>
 <h2>Transaktion #<%= @transaction.id %></h2>
+<h3><%= @transaction.timestamp.to_s(:short) %></h3>
 
-<h3><%= @transaction.amount %> SEK</h3>
-<p><i><%= @transaction.timestamp %></i></p>
-<%- if @transaction.comment %>
-<p><%= @transaction.comment %><p>
-<%- end %>
+<p>
+<%= @transaction.amount %> SEK
+från konto <%= @transaction.account ? link_to(@transaction.account.name, @transaction.account) : '(okänt)'  %>
+spenderade på <%= @transaction.category ? link_to(@transaction.category.name, @transaction.category) : '(ej angivet)' %>
+hos <%= @transaction.vendor ? link_to(@transaction.vendor.name, @transaction.vendor) : '(ej angivet)' %>
+vid <%= @transaction.location ? link_to(@transaction.location.name, @transaction.location) : '(ej angivet)' %>
+med kommentar <%= @transaction.comment || '(ingen)' %>.
+</p>
 
 <%= link_to 'Ändra', edit_transaction_path(@transaction) %> |
-<%= link_to 'Ta bort', @transaction, :confirm => 'Säker?', :method => :delete %>
+<%= link_to 'Ta bort', @transaction, :confirm => 'Säker?', :method => :delete %> |
 <%= link_to 'Tillbaka', transactions_path %>

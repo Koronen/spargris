@@ -5,7 +5,8 @@
   <tr>
     <th>Timestamp</th>
     <th>Amount</th>
-    <th>duu</th>
+    <th>Vad?</th>
+    <th>Kategori</th>
     <th>Comment</th>
   </tr>
 
@@ -14,6 +15,7 @@
     <td><%= link_to transaction.timestamp, transaction %></td>
     <td><%= number_to_currency(transaction.amount) %></td>
     <td><%= link_to(transaction.vendor.name, transaction.vendor) if transaction.vendor %> @ <%= link_to(transaction.location.name, transaction.location) if transaction.location %></td>
+    <td><%= link_to(transaction.category.name, transaction.category) if transaction.category %></td>
     <td><%= transaction.comment if transaction.comment %></td>
   </tr>
 <% end %>
