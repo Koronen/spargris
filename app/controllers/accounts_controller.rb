@@ -13,7 +13,7 @@ class AccountsController < ApplicationController
   # GET /accounts/1
   # GET /accounts/1.xml
   def show
-    @account = Account.find(params[:id])
+    @account = current_user.accounts.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,7 +34,7 @@ class AccountsController < ApplicationController
 
   # GET /accounts/1/edit
   def edit
-    @account = Account.find(params[:id])
+    @account = current_user.accounts.find(params[:id])
   end
 
   # POST /accounts
@@ -45,7 +45,7 @@ class AccountsController < ApplicationController
 
     respond_to do |format|
       if @account.save
-        format.html { redirect_to(@account, :notice => 'Account was successfully created.') }
+        format.html { redirect_to(@account, :notice => t('accounts.create.success_notice')) }
         format.xml  { render :xml => @account, :status => :created, :location => @account }
       else
         format.html { render :action => "new" }
@@ -57,11 +57,11 @@ class AccountsController < ApplicationController
   # PUT /accounts/1
   # PUT /accounts/1.xml
   def update
-    @account = Account.find(params[:id])
+    @account = current_user.accounts.find(params[:id])
 
     respond_to do |format|
       if @account.update_attributes(params[:account])
-        format.html { redirect_to(@account, :notice => 'Account was successfully updated.') }
+        format.html { redirect_to(@account, :notice => t('accounts.update.success_notice')) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -73,11 +73,11 @@ class AccountsController < ApplicationController
   # DELETE /accounts/1
   # DELETE /accounts/1.xml
   def destroy
-    @account = Account.find(params[:id])
+    @account = current_user.accounts.find(params[:id])
     @account.destroy
 
     respond_to do |format|
-      format.html { redirect_to(accounts_url) }
+      format.html { redirect_to(accounts_url, :notice => t('accounts.destroy.success_notice')) }
       format.xml  { head :ok }
     end
   end

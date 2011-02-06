@@ -1,5 +1,5 @@
-<%- title 'Konton' %>
-<h2>Dina konton</h2>
+<%- title t('accounts.title') %>
+<h2><%= t('accounts.index.header') %></h2>
 
 <ul>
 <%- @accounts.each do |account| %>
@@ -7,6 +7,4 @@
 <%- end %>
 </ul>
 
-<br />
-
-<%= link_to 'Nytt konto', new_account_path %>
+<p><%= link_to t('accounts.index.new'), new_account_path %></p>

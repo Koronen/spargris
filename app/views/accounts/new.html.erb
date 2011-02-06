@@ -1,6 +1,6 @@
-<%- title 'Konton' %>
-<h2>Nytt konto</h2>
+<%- title t('accounts.title') %>
+<h2><%= t('accounts.new.header') %></h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Tillbaka', accounts_path %>
+<%= link_to t('common.back'), accounts_path %>

@@ -1,7 +1,7 @@
-<%- title 'Konton' %>
+<%- title t('accounts.title') %>
 <h2><%= @account.name %></h2>
-<h3>Balans: <%= number_to_currency @account.transactions.sum(:amount) %></h3>
+<h3><%= t('accounts.show.balance') %>: <%= number_to_currency @account.transactions.sum(:amount) %></h3>
 
-<%= link_to 'Ändra', edit_account_path(@account) %> |
-<%= link_to 'Ta bort', @account, :confirm => 'Säker?', :method => :delete %> |
-<%= link_to 'Tillbaka', accounts_path %>
+<%= link_to t('common.edit'), edit_account_path(@account) %> |
+<%= link_to t('common.delete'), @account, :confirm => t('common.delete_confirm'), :method => :delete %> |
+<%= link_to t('common.back'), accounts_path %>

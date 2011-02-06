@@ -212,6 +212,14 @@
       # default value for :prompt => true in FormOptionsHelper
       prompt: "Välj"
 
+# Common
+  common:
+    show: "Visa"
+    back: "Tillbaka"
+    edit: "Ändra"
+    delete: "Ta bort"
+    delete_confirm: "Säker?"
+
 # Application specific
   application:
     name: "Spargris"
@@ -228,4 +236,21 @@
     dashboard: "Instrumentbräda"
     login: "Logga in"
     register: "Registrera"
+  accounts:
+    title: "Konton"
+    index:
+      header: "Dina konton"
+      new: "Nytt konto"
+    show:
+      balance: "Balans"
+    new:
+      header: "Nytt konto"
+    edit:
+      header: "Ändra konto"
+    create:
+      success_notice: "Konto skapat."
+    update:
+      success_notice: "Kontot uppdaterat."
+    destroy:
+      success_notice: "Kontot borttaget."
 

@@ -1,7 +1,7 @@
-<%- title 'Konton' %>
-<h2>Ändra konto</h2>
+<%- title t('accounts.title') %>
+<h2><%= t('accounts.edit.header') %></h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Visa', @account %> |
-<%= link_to 'Tillbaka', accounts_path %>
+<%= link_to t('common.show'), @account %> |
+<%= link_to t('common.back'), accounts_path %>
