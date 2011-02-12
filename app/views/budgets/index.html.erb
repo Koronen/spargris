@@ -1,0 +1,26 @@
+<%- title "Budgets" -%>
+<h2>Budgets</h2>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Start</th>
+    <th>End</th>
+    <th>Amount</th>
+    <th>Left</th>
+  </tr>
+
+<% @budgets.each do |budget| %>
+  <tr>
+    <td><%= link_to budget.id, budget %></td>
+    <td><%= budget.start.to_s(:short) %></td>
+    <td><%= budget.end.to_s(:short) %></td>
+    <td><%= budget.amount %></td>
+    <td><%= budget.left %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Budget', new_budget_path %>

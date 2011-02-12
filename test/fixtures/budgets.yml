@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  start: 2011-02-12 19:51:15
+  end: 2011-02-12 19:51:15
+  amount: 1.5
+
+two:
+  start: 2011-02-12 19:51:15
+  end: 2011-02-12 19:51:15
+  amount: 1.5

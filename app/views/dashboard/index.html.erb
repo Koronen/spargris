@@ -1,2 +1,18 @@
 <%- title 'Dashboard' %>
 <h2>Min instrumentbräda</h2>
+
+<h3>Aktuella budgetar</h3>
+<table>
+  <tr>
+    <th>Period</th>
+    <th>Spent</th>
+    <th>Left</th>
+  </tr>
+<% @current_budgets.each do |budget| %>
+  <tr>
+    <td><%= link_to budget.start.to_s(:short) + " till " + budget.end.to_s(:short), budget %></td>
+    <td><%= budget.spent %> kr (<%= budget.spent / budget.days_gone.ceil unless budget.days_gone == 0 %> kr/d)</td>
+    <td><%= budget.left %> kr (<%= budget.left / budget.days_left.ceil %> kr/d)</td>
+  </tr>
+<% end %>
+</table>

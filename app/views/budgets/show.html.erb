@@ -1,0 +1,22 @@
+<%- title "Budgets" -%>
+<h2>Budget #<%= @budget.id %></h2>
+
+<p>
+  <b>Start:</b>
+  <%= @budget.start %>
+</p>
+
+<p>
+  <b>End:</b>
+  <%= @budget.end %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @budget.amount %>
+</p>
+
+
+<%= link_to 'Edit', edit_budget_path(@budget) %> |
+<%= link_to 'Back', budgets_path %>
+<%= link_to 'Destroy', @budget, :confirm => 'Are you sure?', :method => :delete %>
