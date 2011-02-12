@@ -20,6 +20,7 @@ en:
     transactions: "Transactions"
     vendors: "Vendors"
     categories: "Categories"
+    tags: "Tags"
     budget: "Budget"
     stats: "Statistics"
     logout: "Logout"

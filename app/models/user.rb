@@ -3,4 +3,6 @@ class User < ActiveRecord::Base
 
   has_many :accounts
   has_many :transactions
+
+  acts_as_tagger
 end

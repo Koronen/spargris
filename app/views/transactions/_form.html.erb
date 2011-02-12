@@ -36,6 +36,10 @@
     <%= collection_select(:transaction, :category_id, Category.all.sort_by(&:name), :id, :name, options = {:prompt => "-Välj en kategori-"}) %>
   </div>
   <div class="field">
+    <%= f.label :tag_list %><br />
+    <%= f.text_field :tag_list %>
+  </div>
+  <div class="field">
     <%= f.label :comment %><br />
     <%= f.text_field :comment %>
   </div>

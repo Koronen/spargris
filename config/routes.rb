@@ -1,4 +1,6 @@
 Spargris::Application.routes.draw do
+  resources :tags, :except => [:new, :create]
+
   resources :categories
 
   resources :transactions

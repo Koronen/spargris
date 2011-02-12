@@ -11,6 +11,8 @@ vid <%= @transaction.location ? link_to(@transaction.location.name, @transaction
 med kommentar <%= @transaction.comment || '(ingen)' %>.
 </p>
 
+<p>Taggad med: <%= @transaction.tag_list.join(', ') %></p>
+
 <%= link_to 'Ändra', edit_transaction_path(@transaction) %> |
 <%= link_to 'Ta bort', @transaction, :confirm => 'Säker?', :method => :delete %> |
 <%= link_to 'Tillbaka', transactions_path %>

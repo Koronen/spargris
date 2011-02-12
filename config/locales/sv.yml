@@ -229,6 +229,7 @@
     transactions: "Transaktioner"
     vendors: "Affärer"
     categories: "Kategorier"
+    tags: "Taggar"
     budget: "Budget"
     stats: "Statistik"
     logout: "Logga ut"

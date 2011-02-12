@@ -7,6 +7,8 @@ class Transaction < ActiveRecord::Base
 
   validates_presence_of :timestamp, :amount
 
+  acts_as_taggable
+
   scope :debit, lambda {
     where('amount >= 0')
   }
