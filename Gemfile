@@ -26,6 +26,7 @@ group :development do
   gem 'nifty-generators', :git => 'git://github.com/ryanb/nifty-generators.git'
   gem 'ruby-debug19'
   gem 'sqlite3-ruby'
+  gem 'ZenTest'
 end
 
 # Test gems
