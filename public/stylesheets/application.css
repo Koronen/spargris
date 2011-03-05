@@ -4,6 +4,14 @@
   padding: 0;
 }
 
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
 .clear {
   clear: both;
 }
@@ -118,7 +126,7 @@ td {
 
 #nav ul {
   list-style: none;
-  padding: 0.5em 0em 0.5em 2em;
+  padding: 0.5em 0em 1.6em 2em;
 }
 
 #nav ul li {
@@ -127,8 +135,9 @@ td {
 }
 
 #nav ul li a {
-  background-color: #333;
-  color: #aaa;
+  background-color: #444;
+  color: #fff;
+  font-size: 0.75em;
   font-weight: bold;
   text-decoration: none;
   padding: 0.5em;
@@ -137,6 +146,17 @@ td {
 #nav ul li a:hover {
   background: #555;
   color: #fff;
+  text-decoration: none;
+}
+
+#nav ul li.active a {
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+}
+
+#nav ul li.active a:hover {
+  background-color: #333;
   text-decoration: none;
 }
 
