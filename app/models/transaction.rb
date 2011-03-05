@@ -9,7 +9,7 @@ class Transaction < ActiveRecord::Base
 
   acts_as_taggable
 
-  scope :debit, lambda {
+  scope :debet, lambda {
     where('amount >= 0')
   }
 

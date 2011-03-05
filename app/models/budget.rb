@@ -12,7 +12,7 @@ class Budget < ActiveRecord::Base
   end
 
   def spent
-    @spent ||= transactions.debit.sum(:amount)
+    @spent ||= -transactions.credit.sum(:amount)
   end
 
   def left
