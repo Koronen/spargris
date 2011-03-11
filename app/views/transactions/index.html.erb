@@ -2,25 +2,30 @@
 <h2>Listar transaktioner</h2>
 
 <table>
-  <tr>
-    <th>Timestamp</th>
-    <th>Amount</th>
+  <thead>
+    <th>Tidsstämpel</th>
     <th>Vad?</th>
-    <th>Kategori</th>
-    <th>Comment</th>
-  </tr>
-
-<% @transactions.each do |transaction| %>
+    <th>Kommentar</th>
+    <th>Belopp</th>
+  </thead>
+  <tbody>
+<%- @transactions.each do |transaction| -%>
   <tr>
     <td><%= link_to transaction.timestamp, transaction %></td>
-    <td><%= number_to_currency(transaction.amount) %></td>
     <td><%= link_to(transaction.vendor.name, transaction.vendor) if transaction.vendor %> @ <%= link_to(transaction.location.name, transaction.location) if transaction.location %></td>
-    <td><%= link_to(transaction.category.name, transaction.category) if transaction.category %></td>
     <td><%= transaction.comment if transaction.comment %></td>
+    <td><%= number_to_currency(transaction.amount) %></td>
   </tr>
-<% end %>
+<%- end -%>
+  </tbody>
+  <tfoot>
+    <th>Tidsstämpel</th>
+    <th>Vad?</th>
+    <th>Kommentar</th>
+    <th>Belopp</th>
+  </tfoot>
 </table>
 
 <br />
 
-<%= link_to 'New Transaction', new_transaction_path %>
+<%= link_to 'Ny transaktion', new_transaction_path %>

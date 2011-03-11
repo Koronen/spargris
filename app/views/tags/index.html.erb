@@ -3,11 +3,13 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Count</th>
   </tr>
 
 <% @tags.each do |tag| %>
   <tr>
     <td><%= link_to tag.name, tag_path(tag) %></td>
+    <td><%= tag.count %></td>
   </tr>
 <% end %>
 </table>
