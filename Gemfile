@@ -15,6 +15,7 @@ gem 'will_paginate', '>= 3.0.pre2'
 #gem 'nokogiri'
 #gem 'icalendar'
 #gem 'delayed_job', :git => 'git://github.com/collectiveidea/delayed_job.git'
+gem 'i18n_routing', :git => 'http://github.com/kwi/i18n_routing'
 
 # Production gems
 group :production do
