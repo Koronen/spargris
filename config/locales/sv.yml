@@ -311,4 +311,36 @@
       success_notice: "Kontot uppdaterat."
     destroy:
       success_notice: "Kontot borttaget."
+  budgets:
+    title: "Budgetar"
+    index:
+      header: "Dina budgetar"
+      new: "Ny budget"
+    show:
+    new:
+      header: "Ny budget"
+    edit:
+      header: "Ändra budget"
+    create:
+      success_notice: "Budget skapad."
+    update:
+      success_notice: "Budget uppdaterad."
+    destroy:
+      success_notice: "Budget borttagen."
+  categories:
+    title: "Kategorier"
+    index:
+      header: "Kategorier"
+      new: "Ny kategori"
+    show:
+    new:
+      header: "Ny kategori"
+    edit:
+      header: "Ändra kategori"
+    create:
+      success_notice: "Kategori skapad."
+    update:
+      success_notice: "Kategori uppdaterad."
+    destroy:
+      success_notice: "Kategori borttagen."
 

@@ -1,4 +1,4 @@
-<%- title "Budgets" -%>
+<%- title t('budgets.title') %>
 <h2>Budget #<%= @budget.id %></h2>
 
 <p>
@@ -17,6 +17,6 @@
 </p>
 
 
-<%= link_to 'Edit', edit_budget_path(@budget) %> |
-<%= link_to 'Back', budgets_path %>
-<%= link_to 'Destroy', @budget, :confirm => 'Are you sure?', :method => :delete %>
+<%= link_to t('common.edit'), edit_budget_path(@budget) %> |
+<%= link_to t('common.delete'), @budget, :confirm => t('common.delete_confirm'), :method => :delete %> |
+<%= link_to t('common.back'), budgets_path %>

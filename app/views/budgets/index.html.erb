@@ -1,5 +1,5 @@
-<%- title "Budgets" -%>
-<h2>Budgets</h2>
+<%- title t('budgets.title') %>
+<h2><%= t('budgets.index.header') %></h2>
 
 <table>
   <tr>
@@ -23,4 +23,4 @@
 
 <br />
 
-<%= link_to 'New Budget', new_budget_path %>
+<%= link_to t('budgets.index.new'), new_budget_path %>
