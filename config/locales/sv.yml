@@ -212,6 +212,63 @@
       # default value for :prompt => true in FormOptionsHelper
       prompt: "Välj"
 
+# I18n routes
+#TODO: support swedish characters åäö
+  routes:
+    accounts:
+      as: konton
+      path_names:
+        new: 'nytt'
+        edit: 'andra'
+    budgets:
+      as: budgetar
+      path_names:
+        new: 'ny'
+        edit: 'andra'
+    categories:
+      as: kategorier
+      path_names:
+        new: 'ny'
+        edit: 'andra'
+    locations:
+      as: platser
+      path_names:
+        new: 'ny'
+        edit: 'andra'
+    tags:
+      as: taggar
+      path_names:
+        new: 'ny'
+        edit: 'andra'
+    transactions:
+      as: transaktioner
+      path_names:
+        new: 'ny'
+        edit: 'andra'
+    users:
+      as: anvandare
+      path_names:
+        new: 'ny'
+        edit: 'andra'
+    user_sessions:
+      as: sessioner
+    vendors:
+      as: affarer
+      path_names:
+        new: 'ny'
+        edit: 'andra'
+#    users:
+#      as: utilisateurs
+#      path_names:
+#        new: 'nouvel_utilisateur'
+#        edit: 'edition_utilisateur'
+
+  named_routes_path:
+    dashboard: "panel"
+    login: "logga_in"
+    logout: "logga_ut"
+#    about: 'a-propos'
+
 # Common
   common:
     show: "Visa"

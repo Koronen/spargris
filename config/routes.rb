@@ -1,27 +1,30 @@
 Spargris::Application.routes.draw do
-  resources :budgets
+  localized(I18n.available_locales, :verbose => true) do
+      resources :accounts
 
-  resources :tags, :except => [:new, :create]
+      resources :budgets
 
-  resources :categories
+      resources :categories
 
-  resources :transactions
-  match 'transactions/auto_complete_for_vendor_name'
+      resources :locations
 
-  resources :locations
+      resources :tags, :except => [:new, :create]
 
-  resources :vendors
+      resources :transactions
+      match 'transactions/auto_complete_for_vendor_name', :to => 'transactions#auto_complete_for_vendor_name'#, :via => :post, :as => :transactions_auto_complete
 
-  resources :accounts
+      resources :users
 
-  #get 'frontpage/index', :as => :frontpage
-  match 'dashboard', :to => 'dashboard#index', :as => :dashboard
+      resources :user_sessions
 
-  match 'login',  :to => 'user_sessions#new'
-  match 'logout', :to => 'user_sessions#destroy'
+      resources :vendors
 
-  resources :user_sessions
-  resources :users
+      #get 'frontpage/index', :as => :frontpage
+      match 'dashboard', :to => 'dashboard#index', :as => :dashboard
+
+      match 'login',  :to => 'user_sessions#new'
+      match 'logout', :to => 'user_sessions#destroy'
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -2,6 +2,38 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  # I18n routes
+  routes:
+    accounts:
+      as: accounts
+    budgets:
+      as: budgets
+    categories:
+      as: categories
+    locations:
+      as: locations
+    tags:
+      as: tags
+    transactions:
+      as: transactions
+    users:
+      as: users
+    user_sessions:
+      as: user_sessions
+    vendors:
+      as: vendors
+#    users:
+#      as: utilisateurs
+#      path_names:
+#        new: 'nouvel_utilisateur'
+#        edit: 'edition_utilisateur'
+
+  named_routes_path:
+    dashboard: "panel"
+    login: "login"
+    logout: "logout"
+#    'transactions/auto_complete_for_vendor_name'
+#    about: 'a-propos'
 
 # Common
   common:
