@@ -5,7 +5,7 @@ gem 'rails', '3.0.3'
 #gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # Deploy with Capistrano
-gem 'capistrano'
+#gem 'capistrano'
 
 # Useful gems
 gem 'authlogic', :git => 'git://github.com/binarylogic/authlogic.git'
