@@ -1,6 +1,6 @@
-<%- title 'Kategorier' %>
-<h2>Ny kategori</h2>
+<%- title t('categories.title') %>
+<h2><%= t('categories.new.header') %></h2>
 
 <%= render 'form' %>
 
-<%= link_to 'Tillbaka', categories_path %>
+<%= link_to t('common.back'), categories_path %>

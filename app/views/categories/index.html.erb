@@ -1,5 +1,5 @@
-<%- title 'Kategorier' %>
-<h2>Listar kategorier</h2>
+<%- title t('categories.title') %>
+<h2><%= t('categories.index.header') %></h2>
 
 <table>
   <tr>
@@ -15,4 +15,4 @@
 
 <br />
 
-<%= link_to 'Ny kategori', new_category_path %>
+<%= link_to t('categories.index.new'), new_category_path %>
