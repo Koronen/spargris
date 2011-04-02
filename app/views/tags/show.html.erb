@@ -3,6 +3,10 @@
   <%= @tag.name %>
 </p>
 
+<p>
+  <b>Tagged:</b>
+  <%= raw @transactions.map{|t| link_to(t.id, t)}.join(", ") %>
+</p>
 
 <%= link_to 'Edit', edit_tag_path(@tag) %> |
 <%= link_to 'Destroy', tag_path(@tag), :confirm => 'Are you sure?', :method => :delete %> |

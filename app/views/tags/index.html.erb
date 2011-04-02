@@ -9,7 +9,7 @@
 <% @tags.each do |tag| %>
   <tr>
     <td><%= link_to tag.name, tag_path(tag) %></td>
-    <td><%= tag.count %></td>
+    <td><%= tag.taggings.length %></td>
   </tr>
 <% end %>
 </table>

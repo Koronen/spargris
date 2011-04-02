@@ -10,6 +10,7 @@ class TagsController < ApplicationController
 
   def show
     @tag = ActsAsTaggableOn::Tag.find(params[:id])
+    @transactions = @tag.taggings.map(&:taggable)
 
     respond_to do |format|
       format.html # index.html.erb
