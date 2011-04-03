@@ -1,22 +1,16 @@
 Spargris::Application.routes.draw do
   localized(I18n.available_locales) do
       resources :accounts
-
       resources :budgets
-
       resources :categories
-
       resources :locations
-
       resources :tags, :except => [:new, :create]
 
       resources :transactions
       match 'transactions/auto_complete_for_vendor_name', :to => 'transactions#auto_complete_for_vendor_name'#, :via => :post, :as => :transactions_auto_complete
 
       resources :users
-
       resources :user_sessions
-
       resources :vendors
 
       #get 'frontpage/index', :as => :frontpage
@@ -76,10 +70,4 @@ Spargris::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => "frontpage#index"
-
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id(.:format)))'
 end
