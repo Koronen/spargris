@@ -16,32 +16,16 @@
     <%= f.datetime_select :timestamp %>
   </div>
   <div class="field">
-    <%= f.label :amount %><br />
-    <%= f.text_field :amount %>
-  </div>
-  <div class="field">
-    <%= f.label :account %><br />
-    <%= collection_select(:transaction, :account_id, current_user.accounts.sort_by(&:name), :id, :name, options = {:prompt => "-Välj ett konto-"}) %>
-  </div>
-  <div class="field">
     <%= f.label :vendor %><br />
     <%= text_field_with_auto_complete :vendor, :name, :value => (@transaction.vendor.name if @transaction.vendor) %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br />
-    <%= collection_select(:transaction, :location_id, Location.all.sort_by(&:name), :id, :name, options = {:prompt => "-Välj en plats-"}) %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br />
-    <%= collection_select(:transaction, :category_id, Category.all.sort_by(&:name), :id, :name, options = {:prompt => "-Välj en kategori-"}) %>
   </div>
   <div class="field">
     <%= f.label :tag_list %><br />
     <%= f.text_field :tag_list %>
   </div>
   <div class="field">
-    <%= f.label :comment %><br />
-    <%= f.text_field :comment %>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
   </div>
   <div class="actions">
     <%= f.submit %>

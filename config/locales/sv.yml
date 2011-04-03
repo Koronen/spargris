@@ -149,21 +149,23 @@
 
     # Translate model names. Used in Model.human_name().
     models:
-      account: "Konto"
-      location: "Plats"
+      budget_post: "Budget"
+      budget_item: "Budgetrad"
+      budget_post: "Budgetpost"
       transaction: "Transaktion"
+      transaction_item: "Transaktionsrad"
       user: "Användare"
       user_session: "Session"
       vendor: "Affär"
 
     # Translate model attribute names. Used in Model.human_attribute_name(attribute).
     attributes:
-      account:
-        name: Kontonamn
-      location:
+      budget_post:
+      budget_item:
+      budget_post:
       transaction:
+      transaction_item:
       user:
-      user_session:
       vendor:
         name: "Butiksnamn"
 
@@ -206,23 +208,18 @@
 # I18n routes
 #TODO: support swedish characters åäö
   routes:
-    accounts:
-      as: konton
-      path_names:
-        new: 'nytt'
-        edit: 'andra'
     budgets:
       as: budgetar
       path_names:
         new: 'ny'
         edit: 'andra'
-    categories:
-      as: kategorier
+    budget_posts:
+      as: budgetposter
       path_names:
         new: 'ny'
         edit: 'andra'
-    locations:
-      as: platser
+    budget_items:
+      as: budgetrader
       path_names:
         new: 'ny'
         edit: 'andra'
@@ -233,6 +230,11 @@
         edit: 'andra'
     transactions:
       as: transaktioner
+      path_names:
+        new: 'ny'
+        edit: 'andra'
+    transaction_items:
+      as: transaktionsrader
       path_names:
         new: 'ny'
         edit: 'andra'

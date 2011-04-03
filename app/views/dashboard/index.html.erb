@@ -11,8 +11,8 @@
 <% @current_budgets.each do |budget| %>
   <tr>
     <td><%= link_to budget.start.to_s(:short) + " till " + budget.end.to_s(:short), budget %></td>
-    <td><%= budget.spent %> kr (<%= budget.spent / budget.days_gone.ceil unless budget.days_gone == 0 %> kr/d)</td>
-    <td><%= budget.left %> kr (<%= budget.left / budget.days_left.ceil %> kr/d)</td>
+    <td><%= number_to_currency 100 %> (<%= number_to_currency(100 / budget.days_gone.ceil) %>/d)</td>
+    <td><%= number_to_currency 200 %> (<%= number_to_currency(200 / budget.days_left.ceil) %>/d)</td>
   </tr>
 <% end %>
 </table>

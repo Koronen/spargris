@@ -11,11 +11,6 @@
   <%= @budget.end %>
 </p>
 
-<p>
-  <b>Amount:</b>
-  <%= @budget.amount %>
-</p>
-
 
 <%= link_to t('common.edit'), edit_budget_path(@budget) %> |
 <%= link_to t('common.delete'), @budget, :confirm => t('common.delete_confirm'), :method => :delete %> |

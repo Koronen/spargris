@@ -6,13 +6,13 @@
     <th>Name</th>
   </tr>
 
-<% @categories.each do |category| %>
+<% @budget_posts.each do |budget_post| %>
   <tr>
-    <td><%= link_to category.name, category %></td>
+    <td><%= link_to budget_post.name, budget_post %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to t('categories.index.new'), new_category_path %>
+<%= link_to t('categories.index.new'), new_budget_post_path %>

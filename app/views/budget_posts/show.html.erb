@@ -1,0 +1,8 @@
+<%- title t('categories.title') %>
+<h2><%= @budget_post.name %></h2>
+
+<p id="notice"><%= notice %></p>
+
+<%= link_to t('common.edit'), edit_budget_post_path(@budget_post) %> |
+<%= link_to t('common.delete'), @budget_post, :confirm => 'Säker?', :method => :delete %> |
+<%= link_to t('common.back'), budget_posts_path %>

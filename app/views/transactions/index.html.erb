@@ -4,25 +4,19 @@
 <table>
   <thead>
     <th>Tidsstämpel</th>
-    <th>Vad?</th>
-    <th>Kommentar</th>
-    <th>Belopp</th>
+    <th>Beskrivning</th>
   </thead>
   <tbody>
 <%- @transactions.each do |transaction| -%>
   <tr>
     <td><%= link_to transaction.timestamp, transaction %></td>
-    <td><%= link_to(transaction.vendor.name, transaction.vendor) if transaction.vendor %> @ <%= link_to(transaction.location.name, transaction.location) if transaction.location %></td>
-    <td><%= transaction.comment if transaction.comment %></td>
-    <td><%= number_to_currency(transaction.amount) %></td>
+    <td><%= transaction.description if transaction.description %></td>
   </tr>
 <%- end -%>
   </tbody>
   <tfoot>
     <th>Tidsstämpel</th>
-    <th>Vad?</th>
-    <th>Kommentar</th>
-    <th>Belopp</th>
+    <th>Beskrivning</th>
   </tfoot>
 </table>
 

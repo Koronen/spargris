@@ -3,12 +3,8 @@
 <h3><%= @transaction.timestamp.to_s(:short) %></h3>
 
 <p>
-<%= @transaction.amount %> SEK
-från konto <%= @transaction.account ? link_to(@transaction.account.name, @transaction.account) : '(okänt)'  %>
-spenderade på <%= @transaction.category ? link_to(@transaction.category.name, @transaction.category) : '(ej angivet)' %>
-hos <%= @transaction.vendor ? link_to(@transaction.vendor.name, @transaction.vendor) : '(ej angivet)' %>
-vid <%= @transaction.location ? link_to(@transaction.location.name, @transaction.location) : '(ej angivet)' %>
-med kommentar <%= @transaction.comment || '(ingen)' %>.
+<%= @transaction.vendor ? link_to(@transaction.vendor.name, @transaction.vendor) : '(ej angivet)' %><br />
+<%= @transaction.description || '(ingen)' %>
 </p>
 
 <p>Taggad med: <%= @transaction.tag_list.join(', ') %></p>

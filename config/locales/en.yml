@@ -27,23 +27,6 @@ en:
     dashboard: "Dashboard"
     login: "Login"
     register: "Register"
-  accounts:
-    title: "Accounts"
-    index:
-      header: "Your accounts"
-      new: "New account"
-    show:
-      balance: "Balance"
-    new:
-      header: "New account"
-    edit:
-      header: "Edit account"
-    create:
-      success_notice: "Account was successfully created."
-    update:
-      success_notice: "Account was successfully updated."
-    destroy:
-      success_notice: "Account was successfully destroyed."
   budgets:
     title: "Budgets"
     index:
@@ -60,20 +43,4 @@ en:
       success_notice: "Budget was successfully updated."
     destroy:
       success_notice: "Budget was successfully destroyed."
-  categories:
-    title: "Categories"
-    index:
-      header: "Categories"
-      new: "New category"
-    show:
-    new:
-      header: "New category"
-    edit:
-      header: "Edit category"
-    create:
-      success_notice: "Category was successfully created."
-    update:
-      success_notice: "Category was successfully updated."
-    destroy:
-      success_notice: "Category was successfully destroyed."
 

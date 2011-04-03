@@ -1,8 +1,0 @@
-<%- title t('categories.title') %>
-<h2><%= @category.name %></h2>
-
-<p id="notice"><%= notice %></p>
-
-<%= link_to t('common.edit'), edit_category_path(@category) %> |
-<%= link_to t('common.delete'), @category, :confirm => 'Säker?', :method => :delete %> |
-<%= link_to t('common.back'), categories_path %>

@@ -19,10 +19,9 @@
         <ul>
           <li class="left<%= " active" if request.path.match("^/$") %>"><%= link_to t('application.home'), root_url %></li>
           <%- if logged_in? -%>
-            <li class="left<%= mark_active_tab(:account) %>"><%= link_to t('application.accounts'), accounts_url %></li>
             <li class="left<%= mark_active_tab(:transaction) %>"><%= link_to t('application.transactions'), transactions_url %></li>
             <li class="left<%= mark_active_tab(:vendor) %>"><%= link_to t('application.vendors'), vendors_url %></li>
-            <li class="left<%= mark_active_tab(:category) %>"><%= link_to t('application.categories'), categories_url %></li>
+            <li class="left<%= mark_active_tab(:budget_posts) %>"><%= link_to 'Budget Posts', budget_posts_url %></li>
             <li class="left<%= mark_active_tab(:tag) %>"><%= link_to t('application.tags'), tags_url %></li>
             <li class="left<%= mark_active_tab(:budget) %>"><%= link_to t('application.budgets'), budgets_url %></li>
             <li class="left<%= " active" if request.path.match("^/stats") %>"><%= link_to t('application.stats'), root_url %></li>
