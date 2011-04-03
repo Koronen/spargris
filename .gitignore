@@ -1,7 +1,6 @@
 .bundle
 config/configuration.yml
 config/database.yml
-db/schema.rb
 db/*.sql
 db/*.sqlite3
 .DS_Store
