@@ -4,6 +4,7 @@ class Transaction < ActiveRecord::Base
 
   has_many :transaction_items
   has_many :budget_posts, :through => :transaction_items
+  accepts_nested_attributes_for :transaction_items, :allow_destroy => true
 
   validates_presence_of :timestamp
 

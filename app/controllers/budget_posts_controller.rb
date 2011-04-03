@@ -42,7 +42,7 @@ class BudgetPostsController < ApplicationController
   # POST /budget_posts
   # POST /budget_posts.xml
   def create
-    @budget_post = BudgetPost.new(params[:category])
+    @budget_post = BudgetPost.new(params[:budget_post])
 
     respond_to do |format|
       if @budget_post.save
@@ -61,7 +61,7 @@ class BudgetPostsController < ApplicationController
     @budget_post = BudgetPost.find(params[:id])
 
     respond_to do |format|
-      if @budget_post.update_attributes(params[:category])
+      if @budget_post.update_attributes(params[:budget_post])
         format.html { redirect_to(@budget_post, :notice => t('categories.update.success_notice')) }
         format.xml  { head :ok }
       else

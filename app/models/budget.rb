@@ -3,6 +3,7 @@ class Budget < ActiveRecord::Base
 
   has_many :budget_items
   has_many :budget_posts, :through => :budget_items
+  accepts_nested_attributes_for :budget_items, :allow_destroy => true
 
   validates_presence_of :start, :end
 

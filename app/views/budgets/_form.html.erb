@@ -19,6 +19,14 @@
     <%= f.label :end %><br />
     <%= f.date_select :end %>
   </div>
+  <div class="field">
+  <%= f.fields_for :budget_items do |bif| %>
+     <%= bif.label :budget_post %><br />
+     <%= collection_select(:budget_item, :budget_post_id, current_user.budget_posts.sort_by(&:name), :id, :name, :prompt => "-valg-") %>
+     <%= bif.label :amount %><br />
+     <%= bif.text_field :amount %>
+  <% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

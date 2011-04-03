@@ -27,6 +27,14 @@
     <%= f.label :description %><br />
     <%= f.text_field :description %>
   </div>
+  <div class="field">
+  <%= f.fields_for :transaction_items do |tif| %>
+     <%= tif.label :budget_post %><br />
+     <%= collection_select(:transaction_item, :budget_post_id, current_user.budget_posts.sort_by(&:name), :id, :name, :options => {:prompt => "-Välj"}) %>
+     <%= tif.label :amount %><br />
+     <%= tif.text_field :amount %>
+  <% end %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

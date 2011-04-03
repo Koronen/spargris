@@ -4,7 +4,7 @@
       <h2><%= pluralize(@budget_post.errors.count, "error") %> prohibited this category from being saved:</h2>
 
       <ul>
-      <% @category.errors.full_messages.each do |msg| %>
+      <% @budget_post.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :parent_id %><br />
-    <%= collection_select(:budget_post, :parent_id, current_user.budget_posts.sort_by(&:name), :id, :name, options = {:prompt => "-Välj en post-"}) %>
+    <%= collection_select(:budget_post, :parent_id, current_user.budget_posts.sort_by(&:name), :id, :name, :options => {:prompt => "-Välj"}) %>
   </div>
   <div class="actions">
     <%= f.submit %>
