@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110403180944) do
+ActiveRecord::Schema.define(:version => 20110403184330) do
+
+  create_table "budget_items", :force => true do |t|
+    t.integer  "budget_id"
+    t.integer  "budget_post_id"
+    t.float    "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "budget_posts", :force => true do |t|
     t.string   "name"
@@ -43,6 +51,14 @@ ActiveRecord::Schema.define(:version => 20110403180944) do
 
   create_table "tags", :force => true do |t|
     t.string "name"
+  end
+
+  create_table "transaction_items", :force => true do |t|
+    t.integer  "transaction_id"
+    t.integer  "budget_post_id"
+    t.float    "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "transactions", :force => true do |t|

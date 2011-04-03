@@ -2,6 +2,9 @@ class Transaction < ActiveRecord::Base
   belongs_to :user
   belongs_to :vendor
 
+  has_many :transaction_items
+  has_many :budget_posts, :through => :transaction_items
+
   validates_presence_of :timestamp
 
   acts_as_taggable

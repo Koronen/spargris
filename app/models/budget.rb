@@ -1,6 +1,9 @@
 class Budget < ActiveRecord::Base
   belongs_to :user
 
+  has_many :budget_items
+  has_many :budget_posts, :through => :budget_items
+
   validates_presence_of :start, :end
 
   scope :current, lambda {
