@@ -1,7 +1,7 @@
 class Budget < ActiveRecord::Base
   belongs_to :user
 
-  validates_presence_of :start, :end, :amount
+  validates_presence_of :start, :end
 
   scope :current, lambda {
     where('start < ? AND end > ?', Time.zone.now, Time.zone.now)

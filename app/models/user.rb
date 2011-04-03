@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
 
   has_many :transactions
   has_many :budgets
+  has_many :budget_posts
+  has_many :vendors
 
   acts_as_tagger
 end

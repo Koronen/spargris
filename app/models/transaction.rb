@@ -1,19 +1,10 @@
 class Transaction < ActiveRecord::Base
   belongs_to :user
   belongs_to :vendor
-  belongs_to :category
 
-  validates_presence_of :timestamp, :amount
+  validates_presence_of :timestamp
 
   acts_as_taggable
-
-  scope :debet, lambda {
-    where('amount >= 0')
-  }
-
-  scope :credit, lambda {
-    where('amount < 0')
-  }
 
   scope :since, lambda { |time|
     where('timestamp >= ?', time)
@@ -31,7 +22,7 @@ class Transaction < ActiveRecord::Base
     where('updated_at >= ?', time)
   }
 
-  scope :commented, lambda {
-    where('comment IS NOT NULL')
+  scope :with_description, lambda {
+    where('description IS NOT NULL')
   }
 end
