@@ -14,19 +14,16 @@ class Transaction < ActiveRecord::Base
     where('timestamp >= ?', time)
   }
 
-  scope :prior, lambda { |time|
+  scope :prior_to, lambda { |time|
     where('timestamp < ?', time)
   }
 
   scope :between, lambda { |from, to|
-    since(from).prior(to)
+    since(from).prior_to(to)
   }
 
-  scope :updated_since, lambda { |time|
-    where('updated_at >= ?', time)
-  }
-
-  scope :with_description, lambda {
-    where('description IS NOT NULL')
-  }
+  def amount
+    @amount ||= transaction_items.sum(:amount)
+  end
 end
+
