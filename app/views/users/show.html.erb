@@ -1,6 +1,20 @@
 <% title 'Användare' %>
 <h2><%= @user.username %></h2>
 
-<%= link_to 'Ändra', edit_user_path(@user) %>
+<table><tbody>
+  <tr>
+    <th>Email:</th>
+    <td><%= link_to(@user.email, "mailto:" + @user.email) %></td>
+  </tr>
+  <tr>
+    <th>Language:</th>
+    <td><%= @user.language %></td>
+  </tr>
+  <tr>
+    <th>Timezone:</th>
+    <td><%= @user.time_zone %></td>
+  </tr>
+</tbody></table>
 
+<%= link_to 'Ändra', edit_user_path(@user) %>
 
