@@ -1,5 +1,5 @@
 Spargris::Application.routes.draw do
-  localized(I18n.available_locales, :verbose => true) do
+  localized(I18n.available_locales) do
       resources :accounts
 
       resources :budgets
