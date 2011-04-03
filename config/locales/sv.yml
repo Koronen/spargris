@@ -148,10 +148,6 @@
       # models:
 
     # Translate model names. Used in Model.human_name().
-    #models:
-      # For example,
-      #   user: "Dude"
-      # will translate User model name to "Dude"
     models:
       account: "Konto"
       location: "Plats"
@@ -161,11 +157,6 @@
       vendor: "Affär"
 
     # Translate model attribute names. Used in Model.human_attribute_name(attribute).
-    #attributes:
-      # For example,
-      #   user:
-      #     login: "Handle"
-      # will translate User attribute "login" as "Handle"
     attributes:
       account:
         name: Kontonamn
@@ -257,17 +248,11 @@
       path_names:
         new: 'ny'
         edit: 'andra'
-#    users:
-#      as: utilisateurs
-#      path_names:
-#        new: 'nouvel_utilisateur'
-#        edit: 'edition_utilisateur'
 
   named_routes_path:
     dashboard: "panel"
     login: "logga_in"
     logout: "logga_ut"
-#    about: 'a-propos'
 
 # Common
   common:
