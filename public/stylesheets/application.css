@@ -1,8 +1,4 @@
 /* Global */
-* {
-  margin: 0;
-  padding: 0;
-}
 
 .left {
   float: left;
@@ -99,6 +95,8 @@ td {
 /* Header */
 #header {
   background-color: #E13768;
+  margin: 0;
+  padding: 0;
 }
 
 #header h1 {

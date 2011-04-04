@@ -5,18 +5,21 @@
   <thead>
     <th>Tidsstämpel</th>
     <th>Beskrivning</th>
+    <th>Belopp</th>
   </thead>
   <tbody>
 <%- @transactions.each do |transaction| -%>
   <tr>
     <td><%= link_to transaction.timestamp, transaction %></td>
     <td><%= transaction.description if transaction.description %></td>
+    <td><%= transaction.amount if transaction.amount %></td>
   </tr>
 <%- end -%>
   </tbody>
   <tfoot>
     <th>Tidsstämpel</th>
     <th>Beskrivning</th>
+    <th>Belopp</th>
   </tfoot>
 </table>
 
