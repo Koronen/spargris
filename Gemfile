@@ -9,6 +9,7 @@ gem 'rails', '3.0.3'
 
 # Useful gems
 gem 'authlogic', :git => 'git://github.com/binarylogic/authlogic.git'
+gem 'devise'
 gem 'acts-as-taggable-on', :git => 'git://github.com/mbleigh/acts-as-taggable-on.git'
 #gem 'acts_as_tree' => 'git://github.com/rails/acts_as_tree.git'
 gem 'will_paginate', '>= 3.0.pre2'
