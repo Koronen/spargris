@@ -1,33 +1,5 @@
-<%= form_for(@budget) do |f| %>
-  <% if @budget.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@budget.errors.count, "error") %> prohibited this budget from being saved:</h2>
-
-      <ul>
-      <% @budget.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :start %><br />
-    <%= f.date_select :start %>
-  </div>
-  <div class="field">
-    <%= f.label :end %><br />
-    <%= f.date_select :end %>
-  </div>
-  <div class="field">
-  <%= f.fields_for :budget_items do |bif| %>
-     <%= bif.label :budget_post %><br />
-     <%= collection_select(:budget_item, :budget_post_id, current_user.budget_posts.sort_by(&:name), :id, :name, :prompt => "-valg-") %>
-     <%= bif.label :amount %><br />
-     <%= bif.text_field :amount %>
-  <% end %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<%= semantic_form_for @budget do |form| %>
+    <%= form.inputs %>
+    <%= form.buttons %>
 <% end %>
+
