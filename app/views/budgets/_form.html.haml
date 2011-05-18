@@ -1,0 +1,10 @@
+= semantic_form_for @budget do |form|
+  - form.inputs do
+    = form.input :start
+    = form.input :end
+
+  - form.semantic_fields_for :budget_items do |item|
+    = item.inputs :budget_post, :amount
+
+  = form.submit 'Save'
+
