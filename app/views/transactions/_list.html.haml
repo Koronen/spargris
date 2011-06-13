@@ -12,6 +12,7 @@
         %td
           =link_to image_tag("icons/zoom.png", :alt => "Show transaction"), transaction
           =link_to image_tag("icons/wrench.png", :alt => "Edit transaction"), edit_transaction_path(transaction)
+          =link_to image_tag("icons/page_copy.png", :alt => "Clone transaction"), new_transaction_path(:template => transaction)
           =link_to image_tag("icons/delete.png", :alt => "Delete transaction"), transaction, :confirm => 'Are you sure?', :method => :delete
   %tfoot
     %th Tidsstämpel

@@ -26,7 +26,13 @@ class BudgetsController < ApplicationController
   # GET /budgets/new
   # GET /budgets/new.xml
   def new
-    @budget = current_user.budgets.new
+    if params[:template]
+      @budget = current_user.budgets.find(params[:template])
+    else
+      @budget = current_user.budgets.new
+      @budget.start = Time.zone.now
+      @budget.end = 1.hour.from_now
+    end
 
     respond_to do |format|
       format.html # new.html.erb

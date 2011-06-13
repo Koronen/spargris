@@ -5,8 +5,9 @@ class TransactionsController < ApplicationController
 
   # GET /transactions
   # GET /transactions.xml
+  # TODO: pagination
   def index
-    @transactions = Transaction.all
+    @transactions = current_user.transactions.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,7 +18,7 @@ class TransactionsController < ApplicationController
   # GET /transactions/1
   # GET /transactions/1.xml
   def show
-    @transaction = Transaction.find(params[:id])
+    @transaction = current_user.transactions.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -28,7 +29,11 @@ class TransactionsController < ApplicationController
   # GET /transactions/new
   # GET /transactions/new.xml
   def new
-    @transaction = Transaction.new
+    if params[:template]
+      @transaction = current_user.transactions.find(params[:template])
+    else
+      @transaction = Transaction.new
+    end
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,14 +43,13 @@ class TransactionsController < ApplicationController
 
   # GET /transactions/1/edit
   def edit
-    @transaction = Transaction.find(params[:id])
+    @transaction = current_user.transactions.find(params[:id])
   end
 
   # POST /transactions
   # POST /transactions.xml
   def create
-    @transaction = Transaction.new(params[:transaction])
-    @transaction.user = current_user
+    @transaction = current_user.transactions.new(params[:transaction])
     @transaction.vendor = Vendor.find_or_create_by_name(params[:vendor][:name]) unless params[:vendor][:name].blank?
 
     respond_to do |format|
