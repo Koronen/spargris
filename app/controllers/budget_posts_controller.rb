@@ -4,7 +4,7 @@ class BudgetPostsController < ApplicationController
   # GET /budget_posts
   # GET /budget_posts.xml
   def index
-    @budget_posts = BudgetPost.all
+    @budget_posts = current_user.budget_posts.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,7 +15,7 @@ class BudgetPostsController < ApplicationController
   # GET /budget_posts/1
   # GET /budget_posts/1.xml
   def show
-    @budget_post = BudgetPost.find(params[:id])
+    @budget_post = current_user.budget_posts.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -36,13 +36,13 @@ class BudgetPostsController < ApplicationController
 
   # GET /budget_posts/1/edit
   def edit
-    @budget_post = BudgetPost.find(params[:id])
+    @budget_post = current_user.budget_posts.find(params[:id])
   end
 
   # POST /budget_posts
   # POST /budget_posts.xml
   def create
-    @budget_post = BudgetPost.new(params[:budget_post])
+    @budget_post = current_user.budget_posts.new(params[:budget_post])
 
     respond_to do |format|
       if @budget_post.save
@@ -74,7 +74,7 @@ class BudgetPostsController < ApplicationController
   # DELETE /budget_posts/1
   # DELETE /budget_posts/1.xml
   def destroy
-    @budget_post = BudgetPost.find(params[:id])
+    @budget_post = current_user.budget_posts.find(params[:id])
     @budget_post.destroy
 
     respond_to do |format|
