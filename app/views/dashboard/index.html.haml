@@ -1,31 +1,8 @@
 - title 'Dashboard'
 
 %h3 Senaste transaktionerna
-%table
-  %tr
-    %th Tidsstämpel
-    %th Belopp
-
-  - @recent_transactions.each do |transaction|
-    %tr
-      %td
-        = link_to transaction.timestamp.to_s(:short), transaction
-      %td
-        = number_to_currency transaction.amount
+= render :partial => 'transactions/list', :locals => { :transactions => @recent_transactions }
 
 %h3 Aktuella budgetar
-%ul
-  - @current_budgets.each do |budget|
-    %li
-      = link_to budget.start.to_s(:short) + " till " + budget.end.to_s(:short), budget
-      %ul
-        - budget.budget_items.each do |budget_item|
-          %li
-            = budget_item.budget_post.name + ": " + number_to_currency(budget_item.amount)
-            %br
-            Spenderat:
-            = number_to_currency(budget_item.spent) + " (" + number_to_currency(budget_item.spent/budget.days_gone) + "/d)"
-            %br
-            Kvar:
-            = number_to_currency(budget_item.left) + " (" + number_to_currency(budget_item.left/budget.days_left) + "/d)"
+= render :partial => 'budgets/list', :locals => { :budgets => @current_budgets }
 
