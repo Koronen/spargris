@@ -1,0 +1,21 @@
+- title "Transaktion"
+
+%h2= @transaction.vendor ? link_to(@transaction.vendor.name, @transaction.vendor) : '(ej angivet)'
+
+%h3
+  = @transaction.timestamp.to_s(:iso8601)
+  = link_to image_tag("icons/wrench.png", :alt => "Edit"), edit_transaction_path(@transaction)
+  = link_to image_tag("icons/delete.png", :alt => "Delete"), @transaction, :confirm => 'Säker?', :method => :delete
+
+%dl
+- @transaction.transaction_items.each do |item|
+  %dt= item.budget_post.name
+  %dd= number_to_currency item.amount
+
+%p
+  Beskrivning:
+  = @transaction.description || '(ingen)'
+%p
+  Taggar:
+  =raw @transaction.tags.collect{|t| link_to t.name, tag_path(t) }.join(', ')
+
