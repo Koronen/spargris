@@ -1,4 +1,6 @@
 class BudgetPost < ActiveRecord::Base
+  attr_accessible :name, :parent
+
   belongs_to :user
 
   has_many :budget_items
