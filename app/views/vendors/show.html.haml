@@ -1,0 +1,6 @@
+%h2
+  = @vendor.name
+  = link_to image_tag("icons/wrench.png", :alt => "Edit"), edit_vendor_path(@vendor)
+  = link_to image_tag("icons/delete.png", :alt => "Delete"), @vendor, :confirm => 'Säker?', :method => :delete
+
+= render :partial => "transactions/list", :locals => { :transactions => @vendor.transactions.recent(5) }
