@@ -4,7 +4,7 @@
     %th Belopp
     %th Beskrivning
   %tbody
-    - @transactions.each do |transaction|
+    - transactions.each do |transaction|
       %tr
         %td= transaction.timestamp.to_s(:iso8601)
         %td= number_to_currency(transaction.amount) if transaction.amount

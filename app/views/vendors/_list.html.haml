@@ -1,0 +1,12 @@
+%table
+  %thead
+    %tr
+      %th Name
+  %tbody
+    - @vendors.each do |vendor|
+      %tr
+        %td= vendor.name
+        %td
+          =link_to image_tag("icons/zoom.png", :alt => "Show vendor"), vendor
+          =link_to image_tag("icons/wrench.png", :alt => "Edit vendor"), edit_vendor_path(vendor)
+          =link_to image_tag("icons/delete.png", :alt => "Delete vendor"), vendor, :confirm => 'Are you sure?', :method => :delete

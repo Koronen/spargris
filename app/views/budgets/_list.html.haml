@@ -6,7 +6,7 @@
       %th Spent
       %th Left
   %tbody
-    - @budgets.each do |budget|
+    - budgets.each do |budget|
       %tr
         %td= budget.start.to_s(:short)
         %td= budget.end.to_s(:short)
@@ -20,3 +20,9 @@
           =link_to image_tag("icons/zoom.png", :alt => "Show budget"), budget
           =link_to image_tag("icons/wrench.png", :alt => "Edit budget"), edit_budget_path(budget)
           =link_to image_tag("icons/delete.png", :alt => "Delete budget"), budget, :confirm => 'Are you sure?', :method => :delete
+  %tfoot
+    %tr
+      %th Start
+      %th End
+      %th Spent
+      %th Left
