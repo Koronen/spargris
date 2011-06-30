@@ -190,6 +190,8 @@
       user: "Användare"
       user_session: "Session"
       vendor: "Affär"
+      acts_as_taggable_on:
+        tag: "Tagg"
 
     # Translate model attribute names. Used in Model.human_attribute_name(attribute).
     attributes:
