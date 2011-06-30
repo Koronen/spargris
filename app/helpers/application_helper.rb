@@ -12,7 +12,11 @@ module ApplicationHelper
     klass.human_name.pluralize
   end
   def show_title(resource)
-    "#{resource.class.human_name} ##{resource.id}"
+    if resource.has_attribute? :name
+      "#{resource.class.human_name} #{resource.name}"
+    else
+      "#{resource.class.human_name} ##{resource.id}"
+    end
   end
   def new_title(resource)
     t('helpers.submit.create', :model => resource.class.human_name.downcase)
