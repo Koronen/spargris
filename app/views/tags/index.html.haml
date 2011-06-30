@@ -1,16 +1,16 @@
-<h2>Listing tags</h2>
+- title index_title(ActsAsTaggableOn::Tag)
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Count</th>
-  </tr>
+%h2
+  = index_title(ActsAsTaggableOn::Tag)
 
-<% @tags.each do |tag| %>
-  <tr>
-    <td><%= link_to tag.name, tag_path(tag) %></td>
-    <td><%= tag.taggings.length %></td>
-  </tr>
-<% end %>
-</table>
+%table
+  %thead
+    %tr
+      %th Name
+      %th Count
+  %tbody
+  - @tags.each do |tag|
+    %tr
+      %td= link_to tag.name, tag_path(tag)
+      %td= tag.taggings.length
 

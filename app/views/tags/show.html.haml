@@ -1,14 +1,7 @@
-<p>
-  <b>Name:</b>
-  <%= @tag.name %>
-</p>
+- title show_title(@tag)
+%h2
+  = show_title(@tag)
+  = link_to image_tag("icons/wrench.png", :alt => "Edit"), edit_tag_path(@tag)
+  = link_to image_tag("icons/delete.png", :alt => "Delete"), tag_path(@tag), :confirm => 'Säker?', :method => :delete
 
-<p>
-  <b>Tagged:</b>
-  <%= raw @transactions.map{|t| link_to(t.id, t)}.join(", ") %>
-</p>
-
-<%= link_to 'Edit', edit_tag_path(@tag) %> |
-<%= link_to 'Destroy', tag_path(@tag), :confirm => 'Are you sure?', :method => :delete %> |
-<%= link_to 'Back', tags_path %>
-
+= render :partial => 'transactions/list', :locals => { :transactions => @transactions }

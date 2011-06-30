@@ -1,6 +1,7 @@
-<h1>#<%= @tag.id %></h1>
+- title edit_title(@tag)
 
-<%= render 'form' %>
+%h2
+  = edit_title(@tag)
+  = link_to image_tag("icons/cross.png", :alt => "Back"), @tag
 
-<%= link_to 'Show', @tag %> |
-<%= link_to 'Back', tags_path %>
+= render 'form'

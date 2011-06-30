@@ -9,7 +9,7 @@
 
 %dl
 - @transaction.transaction_items.each do |item|
-  %dt= item.budget_post.name
+  %dt= item.budget_post.try(:name)
   %dd= number_to_currency item.amount
 
 %p
