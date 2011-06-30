@@ -13,7 +13,7 @@ module ApplicationHelper
   end
   def show_title(resource)
     if resource.has_attribute? :name
-      "#{resource.class.human_name} #{resource.name}"
+      "#{resource.class.human_name}: #{resource.name}"
     else
       "#{resource.class.human_name} ##{resource.id}"
     end
@@ -22,7 +22,12 @@ module ApplicationHelper
     t('helpers.submit.create', :model => resource.class.human_name.downcase)
   end
   def edit_title(resource)
-    t('helpers.submit.update', :model => resource.class.human_name.downcase) + " ##{resource.id}"
+    edit_text = t('helpers.submit.update', :model => resource.class.human_name.downcase)
+    if resource.has_attribute? :name
+      "#{edit_text}: #{resource.name}"
+    else
+      "#{edit_text} ##{resource.id}"
+    end
   end
 
   def mark_active_tab(resource)

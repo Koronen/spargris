@@ -1,6 +1,6 @@
-%h1 Editing vendor
+- title edit_title(@vendor)
+%h2
+  = edit_title(@vendor)
+  = link_to image_tag("icons/cross.png", :alt => "Back"), @vendor
 
 = render 'form'
-
-= link_to 'Show', @vendor
-= link_to 'Back', vendors_path

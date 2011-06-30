@@ -50,7 +50,6 @@ class TransactionsController < ApplicationController
   # POST /transactions.xml
   def create
     @transaction = current_user.transactions.new(params[:transaction])
-    @transaction.vendor = Vendor.find_or_create_by_name(params[:vendor][:name]) unless params[:vendor][:name].blank?
 
     respond_to do |format|
       if @transaction.save
@@ -67,7 +66,6 @@ class TransactionsController < ApplicationController
   # PUT /transactions/1.xml
   def update
     @transaction = Transaction.find(params[:id])
-    @transaction.vendor = Vendor.find_or_create_by_name(params[:vendor][:name]) unless params[:vendor][:name].blank?
 
     respond_to do |format|
       if @transaction.update_attributes(params[:transaction])

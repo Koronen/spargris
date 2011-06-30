@@ -1,6 +1,7 @@
-%h1 Editing transaction
+- title edit_title(@transaction)
+
+%h2
+  = edit_title(@transaction)
+  = link_to image_tag("icons/cross.png", :alt => "Back"), @transaction
 
 = render 'form'
-
-= link_to 'Show', @transaction
-= link_to 'Back', transactions_path
