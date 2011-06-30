@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:"http-equiv" => "Content-Type", :content => "text/html; charset=UTF-8"}
-    %title= h(t('application.name')) + " - " + (h(yield(:title) || t('application.unnamed')))
+    %title= "Spargris"
     %link(rel="shortcut icon" href="/favicon.ico" type="image/x-icon")
     = stylesheet_link_tag 'application'
     = stylesheet_link_tag 'formtastic', 'formtastic_changes'
@@ -14,35 +14,33 @@
     %div#container
       %div#header
         %h1
-          = link_to t('application.name'), root_url
+          = link_to "Spargris", root_url
       %div.clear
         %div#nav
           %ul
-            %li.left{:class => request.path.match("^/$") ? "active" : ""}
-              = link_to t('application.home'), root_url
             - if logged_in?
               %li.left{:class => active_tab?(:budget) ? "active" : ""}
-                = link_to t('application.budgets'), budgets_url
+                = link_to Budget.human_name.pluralize, budgets_url
               %li.left{:class => active_tab?(:budget_posts) ? "active" : ""}
-                = link_to t('application.budget_posts'), budget_posts_url
+                = link_to BudgetPost.human_name.pluralize, budget_posts_url
               %li.left{:class => active_tab?(:transaction) ? "active" : ""}
-                = link_to t('application.transactions'), transactions_url
+                = link_to Transaction.human_name.pluralize, transactions_url
               %li.left{:class => active_tab?(:vendor) ? "active" : ""}
-                = link_to t('application.vendors'), vendors_url
+                = link_to Vendor.human_name.pluralize, vendors_url
               %li.left{:class => active_tab?(:tag) ? "active" : ""}
-                = link_to t('application.tags'), tags_url
+                = link_to ActsAsTaggableOn::Tag.human_name.pluralize, tags_url
 
               %li.right
-                = link_to t('application.logout'), logout_path
+                = link_to "Logout", logout_path
               %li.right{:class => active_tab?(:user) ? "active" : ""}
-                = link_to t('application.settings'), current_user
+                = link_to User.human_name, current_user
               %li.right
-                = link_to t('application.dashboard'), dashboard_path
+                = link_to "Dashboard", dashboard_path
             - else
               %li.right
-                = link_to t('application.login'), login_path
+                = link_to "Login", login_path
               %li.right
-                = link_to t('application.register'), new_user_path
+                = link_to "Register", new_user_path
           %div.clear
         
         %div#content
