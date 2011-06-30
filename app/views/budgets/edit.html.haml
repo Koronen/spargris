@@ -1,6 +1,7 @@
-- title t('budgets.title')
+- title edit_title(@budget)
+
 %h2
-  = t('budgets.edit.header')
+  = edit_title(@budget)
   = link_to image_tag("icons/cross.png", :alt => "Back"), @budget
 
 = render 'form'

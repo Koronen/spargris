@@ -1,6 +1,7 @@
-- title t('budgets.title')
+- title index_title(Budget)
+
 %h2
-  = t('budgets.index.header')
+  = index_title(Budget)
   = link_to image_tag("icons/add.png", :alt => "New budget"), new_budget_path
 
-= render :partial => "list", :locals => { :budgets => @budgets }
+= render "list", { :budgets => @budgets }

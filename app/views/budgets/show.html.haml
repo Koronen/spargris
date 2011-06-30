@@ -1,7 +1,6 @@
-- title t('budgets.title')
+- title show_title(@budget)
 %h2
-  Budget
-  = '#' + @budget.id.to_s
+  = show_title(@budget)
   = link_to image_tag("icons/wrench.png", :alt => "Edit"), edit_budget_path(@budget)
   = link_to image_tag("icons/delete.png", :alt => "Delete"), @budget, :confirm => 'Säker?', :method => :delete
 

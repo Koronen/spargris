@@ -1,0 +1,15 @@
+- title index_title(BudgetPost)
+
+%h2
+  = index_title(BudgetPost)
+  = link_to image_tag("icons/add.png", :alt => "New budget post"), new_budget_post_path
+
+%table
+  %thead
+    %tr
+      %th Name
+  %tbody
+  - @budget_posts.each do |budget_post|
+    %tr
+      %td= link_to budget_post.name, budget_post
+
