@@ -1,27 +1,28 @@
 GIT
   remote: git://github.com/binarylogic/authlogic.git
-  revision: 66ed79515919fe13016911b10ebe734cf8718dc7
+  revision: 2da24e490ace2bf99bcfd57ee4d5d31dd2e2b2be
   specs:
-    authlogic (2.1.6)
-      activesupport
+    authlogic (3.0.3)
+      activerecord (>= 3.0.7)
+      activerecord (>= 3.0.7)
 
 GIT
   remote: git://github.com/mbleigh/acts-as-taggable-on.git
-  revision: 3d707c25d45b5cc680cf3623d15ff59856457ea9
+  revision: 2752cfef4c66318d0925fbe880d5392ad188bb50
   specs:
     acts-as-taggable-on (2.0.6)
 
 GIT
   remote: git://github.com/ryanb/nifty-generators.git
-  revision: ecb12821d44ae80176be653fb8f285b28d788ec1
+  revision: 18dfe4847073dad9b73f215c402d971e7b49c19e
   specs:
-    nifty-generators (0.4.5)
+    nifty-generators (0.4.6)
 
 GIT
   remote: http://github.com/kwi/i18n_routing
-  revision: 742a5a2242822b066f9d13ab816a2cd1729061f8
+  revision: 0bfe59dce32bc65f1ce336b8c71f3010ffe9859d
   specs:
-    i18n_routing (0.4.6)
+    i18n_routing (0.4.7)
       i18n (> 0.3.5)
 
 GEM
@@ -29,53 +30,53 @@ GEM
   specs:
     ZenTest (4.5.0)
     abstract (1.0.0)
-    actionmailer (3.0.3)
-      actionpack (= 3.0.3)
-      mail (~> 2.2.9)
-    actionpack (3.0.3)
-      activemodel (= 3.0.3)
-      activesupport (= 3.0.3)
+    actionmailer (3.0.7)
+      actionpack (= 3.0.7)
+      mail (~> 2.2.15)
+    actionpack (3.0.7)
+      activemodel (= 3.0.7)
+      activesupport (= 3.0.7)
       builder (~> 2.1.2)
       erubis (~> 2.6.6)
-      i18n (~> 0.4)
+      i18n (~> 0.5.0)
       rack (~> 1.2.1)
-      rack-mount (~> 0.6.13)
-      rack-test (~> 0.5.6)
+      rack-mount (~> 0.6.14)
+      rack-test (~> 0.5.7)
       tzinfo (~> 0.3.23)
-    activemodel (3.0.3)
-      activesupport (= 3.0.3)
+    activemodel (3.0.7)
+      activesupport (= 3.0.7)
       builder (~> 2.1.2)
-      i18n (~> 0.4)
-    activerecord (3.0.3)
-      activemodel (= 3.0.3)
-      activesupport (= 3.0.3)
+      i18n (~> 0.5.0)
+    activerecord (3.0.7)
+      activemodel (= 3.0.7)
+      activesupport (= 3.0.7)
       arel (~> 2.0.2)
       tzinfo (~> 0.3.23)
-    activeresource (3.0.3)
-      activemodel (= 3.0.3)
-      activesupport (= 3.0.3)
-    activesupport (3.0.3)
+    activeresource (3.0.7)
+      activemodel (= 3.0.7)
+      activesupport (= 3.0.7)
+    activesupport (3.0.7)
     archive-tar-minitar (0.5.2)
-    arel (2.0.9)
+    arel (2.0.10)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
-    columnize (0.3.2)
-    devise (1.3.4)
+    columnize (0.3.3)
+    devise (1.4.2)
       bcrypt-ruby (~> 2.1.2)
       orm_adapter (~> 0.0.3)
       warden (~> 1.0.3)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    formtastic (1.2.3)
+    formtastic (1.2.4)
       actionpack (>= 2.3.7)
       activesupport (>= 2.3.7)
       i18n (~> 0.4)
-    haml (3.0.25)
+    haml (3.1.2)
     i18n (0.5.0)
-    linecache19 (0.5.11)
+    linecache19 (0.5.12)
       ruby_core_source (>= 0.1.4)
-    mail (2.2.15)
+    mail (2.2.19)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -84,39 +85,39 @@ GEM
     mocha (0.9.12)
     orm_adapter (0.0.5)
     polyglot (0.3.1)
-    rack (1.2.1)
-    rack-mount (0.6.13)
+    rack (1.2.3)
+    rack-mount (0.6.14)
       rack (>= 1.0.0)
     rack-test (0.5.7)
       rack (>= 1.0)
-    rails (3.0.3)
-      actionmailer (= 3.0.3)
-      actionpack (= 3.0.3)
-      activerecord (= 3.0.3)
-      activeresource (= 3.0.3)
-      activesupport (= 3.0.3)
+    rails (3.0.7)
+      actionmailer (= 3.0.7)
+      actionpack (= 3.0.7)
+      activerecord (= 3.0.7)
+      activeresource (= 3.0.7)
+      activesupport (= 3.0.7)
       bundler (~> 1.0)
-      railties (= 3.0.3)
-    railties (3.0.3)
-      actionpack (= 3.0.3)
-      activesupport (= 3.0.3)
+      railties (= 3.0.7)
+    railties (3.0.7)
+      actionpack (= 3.0.7)
+      activesupport (= 3.0.7)
       rake (>= 0.8.7)
       thor (~> 0.14.4)
-    rake (0.8.7)
-    rspec (2.5.0)
-      rspec-core (~> 2.5.0)
-      rspec-expectations (~> 2.5.0)
-      rspec-mocks (~> 2.5.0)
-    rspec-core (2.5.1)
-    rspec-expectations (2.5.0)
+    rake (0.9.2)
+    rspec (2.6.0)
+      rspec-core (~> 2.6.0)
+      rspec-expectations (~> 2.6.0)
+      rspec-mocks (~> 2.6.0)
+    rspec-core (2.6.4)
+    rspec-expectations (2.6.0)
       diff-lcs (~> 1.1.2)
-    rspec-mocks (2.5.0)
-    rspec-rails (2.5.0)
+    rspec-mocks (2.6.0)
+    rspec-rails (2.6.1)
       actionpack (~> 3.0)
       activesupport (~> 3.0)
       railties (~> 3.0)
-      rspec (~> 2.5.0)
-    ruby-debug-base19 (0.11.24)
+      rspec (~> 2.6.0)
+    ruby-debug-base19 (0.11.25)
       columnize (>= 0.3.1)
       linecache19 (>= 0.5.11)
       ruby_core_source (>= 0.1.4)
@@ -124,7 +125,7 @@ GEM
       columnize (>= 0.3.1)
       linecache19 (>= 0.5.11)
       ruby-debug-base19 (>= 0.11.19)
-    ruby_core_source (0.1.4)
+    ruby_core_source (0.1.5)
       archive-tar-minitar (>= 0.5.2)
     sqlite3 (1.3.3)
     sqlite3-ruby (1.3.3)
@@ -132,7 +133,7 @@ GEM
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
-    tzinfo (0.3.24)
+    tzinfo (0.3.29)
     warden (1.0.4)
       rack (>= 1.0)
     will_paginate (3.0.pre2)
@@ -143,14 +144,14 @@ PLATFORMS
 DEPENDENCIES
   ZenTest
   acts-as-taggable-on!
-  authlogic!
+  authlogic (~> 3.0.3)!
   devise
   formtastic
   haml
   i18n_routing!
   mocha
   nifty-generators!
-  rails (= 3.0.3)
+  rails (= 3.0.7)
   rspec (>= 2.0.0.beta.11)
   rspec-rails (>= 2.0.0.beta.11)
   ruby-debug19

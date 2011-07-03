@@ -1,14 +1,14 @@
 source 'http://rubygems.org'
 
 # Rails itself
-gem 'rails', '3.0.3'
+gem 'rails', '3.0.7'
 #gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # Deploy with Capistrano
 #gem 'capistrano'
 
 # Useful gems
-gem 'authlogic', :git => 'git://github.com/binarylogic/authlogic.git'
+gem 'authlogic', '~> 3.0.3', :git => 'git://github.com/binarylogic/authlogic.git'
 gem 'devise'
 gem 'acts-as-taggable-on', :git => 'git://github.com/mbleigh/acts-as-taggable-on.git'
 #gem 'acts_as_tree' => 'git://github.com/rails/acts_as_tree.git'
