@@ -21,6 +21,7 @@ gem 'formtastic'
 gem 'haml'
 gem 'jquery-rails'
 gem 'cocoon'
+gem 'kaminari'
 
 # Production gems
 group :production do
