@@ -2,7 +2,10 @@ class TransactionItem < ActiveRecord::Base
   belongs_to :transaction
   belongs_to :budget_post
 
-  validates_presence_of :amount
+  attr_accessible :budget_post_id, :amount
+
+  validates_presence_of :budget_post_id, :amount
+  validates_numericality_of :amount
 
   scope :with_user_id, lambda { |uid|
     joins(:transaction).where('transactions.user_id == ?', uid)

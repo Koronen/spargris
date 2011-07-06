@@ -4,8 +4,10 @@
   = text_field_with_auto_complete :vendor, :name, :value => (@transaction.vendor.name if @transaction.vendor)
   = form.input :tag_list
   = form.input :description
-  = form.inputs :name => 'Transaction Item #%i', :for => :transaction_items do |tif|
-    = tif.input :budget_post, :include_blank => false
-    = tif.input :amount
+  %h3 Tasks
+  = form.semantic_fields_for :transaction_items do |item|
+    = render 'transaction_item_fields', :f => item
+  .links
+    = link_to_add_association 'add item', form, :transaction_items
   = form.submit
 
