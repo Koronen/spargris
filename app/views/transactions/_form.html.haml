@@ -1,5 +1,6 @@
 = semantic_form_for @transaction do |form|
-  = form.input :timestamp
+  = form.inputs do
+    = form.input :timestamp
   = form.label :vendor
   = text_field_with_auto_complete :vendor, :name, :value => (@transaction.vendor.name if @transaction.vendor)
   = form.input :tag_list
