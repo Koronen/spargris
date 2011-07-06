@@ -19,6 +19,7 @@ gem 'will_paginate', '>= 3.0.pre2'
 gem 'i18n_routing', :git => 'http://github.com/kwi/i18n_routing'
 gem 'formtastic'
 gem 'haml'
+gem 'jquery-rails'
 gem 'cocoon'
 
 # Production gems
