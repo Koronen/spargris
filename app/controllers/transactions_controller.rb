@@ -7,7 +7,7 @@ class TransactionsController < ApplicationController
   # GET /transactions.xml
   # TODO: pagination
   def index
-    @transactions = current_user.transactions.all
+    @transactions = current_user.transactions.reverse_chronological_order.page(params[:page]).per(2)
 
     respond_to do |format|
       format.html # index.html.erb
