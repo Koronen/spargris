@@ -203,6 +203,11 @@
       user:
       vendor:
         name: "Butiksnamn"
+  views:
+    pagination:
+      previous: "&lt; Föregående"
+      next: "Nästa &gt;"
+      truncate: "..."
 
   date:
     formats:
