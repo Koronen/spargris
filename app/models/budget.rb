@@ -12,6 +12,9 @@ class Budget < ActiveRecord::Base
     where('start < ? AND end > ?', Time.zone.now, Time.zone.now)
   }
 
+  scope :chronological_order, order("start ASC")
+  scope :reverse_chronological_order, order("start DESC")
+
   def days
     @days ||= (self.end-self.start)/1.day.to_f
   end
@@ -34,8 +37,17 @@ class Budget < ActiveRecord::Base
     @spent ||= budget_items.inject(0) { |result, element| result + element.spent }
   end
 
-  def left
-    @left ||= budget_items.inject(0) { |result, element| result + element.left }
+  def earned
+    @earned ||= budget_items.inject(0) { |result, element| result + element.earned }
+  end
+
+  def difference
+    @difference ||= budget_items.inject(0) { |result, element| result + element.difference }
+  end
+  alias :diff :difference
+
+  def margin
+    -self.difference
   end
 
   def spent_per_day
@@ -43,9 +55,20 @@ class Budget < ActiveRecord::Base
     self.spent / self.days_gone
   end
 
-  def left_per_day
-    return self.left if self.end.past?
-    self.left / self.days_left
+  def earned_per_day
+    return 0 if self.start.future?
+    self.earned / self.days_gone
+  end
+
+  def difference_per_day
+    return 0 if self.start.future?
+    self.diff / self.days_gone
+  end
+  alias :diff_per_day :difference_per_day
+
+  def margin_per_day
+    return 0 if self.end.past?
+    self.margin / self.days_left
   end
 end
 

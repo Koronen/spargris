@@ -6,6 +6,8 @@ class Transaction < ActiveRecord::Base
   has_many :budget_posts, :through => :transaction_items
   accepts_nested_attributes_for :transaction_items, :allow_destroy => true
 
+  #attr_accessible :timestamp, :vendor_name, :tag_list, :desctiption, :transaction_items_attributes
+
   validates_presence_of :timestamp
 
   def vendor_name

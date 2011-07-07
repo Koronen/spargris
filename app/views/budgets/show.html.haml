@@ -4,14 +4,28 @@
   = link_to image_tag("icons/wrench.png", :alt => "Edit"), edit_budget_path(@budget)
   = link_to image_tag("icons/delete.png", :alt => "Delete"), @budget, :confirm => 'Säker?', :method => :delete
 
-%dl
-  %dt Start
-  %dd= @budget.start
-  %dt End
-  %dd= @budget.end
+%p
+  %dl
+    %dt Start
+    %dd= @budget.start
+    %dt End
+    %dd= @budget.end
 
-%dl
-  - @budget.budget_items.each do |budget_item|
-    %dt= budget_item.try(:budget_post).try(:name)
-    %dd= number_to_currency budget_item.try(:amount)
+%p
+  %table
+    %thead
+      %tr
+        %th Budget post
+        %th Amount
+    %tbody
+      - @budget.budget_items.each do |budget_item|
+        %tr
+          %td= link_to budget_item.budget_post.name, budget_item.budget_post
+          - klass = budget_item.amount >= 0 ? "plus" : "minus"
+          %td.currency{:class => klass}
+            = number_to_currency budget_item.amount
+    %tfoot
+      %tr
+        %th Budget post
+        %th Amount
 

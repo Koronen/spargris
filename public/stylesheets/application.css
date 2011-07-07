@@ -163,6 +163,18 @@ td {
   text-decoration: none;
 }
 
+/* misc */
+#content {
+  padding: 1em;
+}
+
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 1em;
+}
+
 /* Sidebar (not used atm) */
 /*
 #sidebar {
@@ -248,6 +260,22 @@ ul.checkbox-list li {
   color:#ccc;
 }
 */
+
+/* currency */
+.currency {
+  background-color: #404040;
+  font-family: "Courier New", monospace;
+  text-align: right;
+  font-weight: bold;
+}
+
+.currency.plus {
+  color: #00ff00;
+}
+
+.currency.minus {
+  color: #ff0000;
+}
 
 /* Rails errors */
 .fieldWithErrors {

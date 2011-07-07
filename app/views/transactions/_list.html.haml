@@ -7,7 +7,8 @@
     - transactions.each do |transaction|
       %tr
         %td= transaction.timestamp.to_s(:iso8601)
-        %td= number_to_currency(transaction.amount) if transaction.amount
+        - klass = transaction.amount >= 0.0 ? "plus" : "minus"
+        %td.currency{:class => klass}= number_to_currency(transaction.amount)
         %td= transaction.description if transaction.description
         %td= modification_image_links(transaction)
   %tfoot

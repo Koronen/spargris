@@ -7,11 +7,23 @@ class BudgetItem < ActiveRecord::Base
   validates_presence_of :amount, :budget_post_id
 
   def spent
-    @spent ||= TransactionItem.with_user_id(budget.user.id).between(budget.start, budget.end).where(:budget_post_id => budget_post.id).sum(:amount)
+    @transaction_items ||= TransactionItem.for_budget_item(self)
+    @spent ||= -@transaction_items.where("amount < 0").sum(:amount)
   end
 
-  def left
-    amount-spent
+  def earned
+    @transaction_items ||= TransactionItem.for_budget_item(self)
+    @earned ||= @transaction_items.where("amount >= 0").sum(:amount)
   end
+
+  def sum
+    @transaction_items ||= TransactionItem.for_budget_item(self)
+    @sum ||= @transaction_items.sum(:amount)
+  end
+
+  def difference
+    @diff ||= self.sum - self.amount
+  end
+  alias :diff :difference
 end
 

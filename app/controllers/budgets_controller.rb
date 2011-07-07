@@ -4,7 +4,7 @@ class BudgetsController < ApplicationController
   # GET /budgets
   # GET /budgets.xml
   def index
-    @budgets = current_user.budgets
+    @budgets = current_user.budgets.reverse_chronological_order.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

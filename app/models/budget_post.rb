@@ -1,5 +1,5 @@
 class BudgetPost < ActiveRecord::Base
-  attr_accessible :name, :parent
+  attr_accessible :user_id, :name, :parent
 
   belongs_to :user
 
@@ -9,5 +9,7 @@ class BudgetPost < ActiveRecord::Base
   has_many :transactions, :through => :transaction_items
 
   validates_presence_of :name
+
+  scope :alphabetical_order, order("name ASC")
 end
 

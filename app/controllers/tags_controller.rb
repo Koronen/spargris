@@ -1,6 +1,6 @@
 class TagsController < ApplicationController
   def index
-    @tags = ActsAsTaggableOn::Tag.all
+    @tags = ActsAsTaggableOn::Tag.order("name ASC") #.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

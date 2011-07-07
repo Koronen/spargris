@@ -5,3 +5,5 @@
   = link_to image_tag("icons/add.png", :alt => "New budget"), new_budget_path
 
 = render "list", { :budgets => @budgets }
+
+= paginate @budgets

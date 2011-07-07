@@ -7,10 +7,24 @@
   = link_to image_tag("icons/wrench.png", :alt => "Edit"), edit_transaction_path(@transaction)
   = link_to image_tag("icons/delete.png", :alt => "Delete"), @transaction, :confirm => 'Säker?', :method => :delete
 
-%dl
-- @transaction.transaction_items.each do |item|
-  %dt= item.budget_post.try(:name)
-  %dd= number_to_currency item.amount
+%p
+  %table
+    %thead
+      %tr
+        %th Budget post
+        %th Amount
+    %tbody
+      - @transaction.transaction_items.each do |item|
+        %tr
+          %td= link_to item.budget_post.name, item.budget_post
+          - klass = item.amount >= 0 ? "plus" : "minus"
+          %td.currency{:class => klass}
+            = number_to_currency item.amount
+    %tfoot
+      %tr
+        %th Budget post
+        %th Amount
+
 
 %p
   Beskrivning:

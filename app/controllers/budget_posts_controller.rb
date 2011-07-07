@@ -4,7 +4,7 @@ class BudgetPostsController < ApplicationController
   # GET /budget_posts
   # GET /budget_posts.xml
   def index
-    @budget_posts = current_user.budget_posts.all
+    @budget_posts = current_user.budget_posts.alphabetical_order.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -16,6 +16,7 @@ class BudgetPostsController < ApplicationController
   # GET /budget_posts/1.xml
   def show
     @budget_post = current_user.budget_posts.find(params[:id])
+    @transactions = @budget_post.transactions
 
     respond_to do |format|
       format.html # show.html.erb

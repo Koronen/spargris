@@ -1,14 +1,15 @@
 = semantic_form_for @transaction do |form|
   = form.inputs do
     = form.input :timestamp
-  = form.label :vendor
-  = text_field_with_auto_complete :vendor, :name, :value => (@transaction.vendor.name if @transaction.vendor)
+  -#= form.label :vendor
+  -#= text_field_with_auto_complete :vendor, :name, :value => (@transaction.vendor.name if @transaction.vendor)
+  = form.input :vendor
   = form.input :tag_list
   = form.input :description
-  %h3 Tasks
-  = form.semantic_fields_for :transaction_items do |item|
-    = render 'transaction_item_fields', :f => item
-  .links
-    = link_to_add_association 'add item', form, :transaction_items
+  = form.inputs :name => "Transaction items" do
+    = form.semantic_fields_for :transaction_items do |item|
+      = render 'transaction_item_fields', :f => item
+    .links
+      = link_to_add_association 'Add item', form, :transaction_items
   = form.submit
 
