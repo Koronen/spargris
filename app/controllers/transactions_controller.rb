@@ -5,7 +5,6 @@ class TransactionsController < ApplicationController
 
   # GET /transactions
   # GET /transactions.xml
-  # TODO: pagination
   def index
     @transactions = current_user.transactions.reverse_chronological_order.page(params[:page])
 
