@@ -1,0 +1,20 @@
+%table
+  %thead
+    %th Timeframe
+    %th Spendings
+    %th Earnings
+    %th Result
+  %tbody
+    - [:this_month, :'30d', :'90d', :'180d', :total].each do |tf|
+      %tr
+        %td= tf.to_s.capitalize
+        %td.currency.minus= number_to_currency(@stats[tf][:spendings])
+        %td.currency.plus= number_to_currency(@stats[tf][:earnings])
+        - klass = @stats[tf][:result] >= 0 ? "plus" : "minus"
+        %td.currency{:class => klass}= number_to_currency(@stats[tf][:result])
+  %tfoot
+    %th Timeframe
+    %th Spendings
+    %th Earnings
+    %th Result
+
