@@ -8,12 +8,12 @@ class BudgetItem < ActiveRecord::Base
 
   def spent
     @transaction_items ||= TransactionItem.for_budget_item(self)
-    @spent ||= -@transaction_items.where("amount < 0").sum(:amount)
+    @spent ||= -@transaction_items.spendings.sum(:amount)
   end
 
   def earned
     @transaction_items ||= TransactionItem.for_budget_item(self)
-    @earned ||= @transaction_items.where("amount >= 0").sum(:amount)
+    @earned ||= @transaction_items.earnings.sum(:amount)
   end
 
   def sum

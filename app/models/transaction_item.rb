@@ -23,6 +23,9 @@ class TransactionItem < ActiveRecord::Base
     since(from).prior_to(to)
   }
 
+  scope :spendings, where("amount < 0")
+  scope :earnings, where("amount >= 0")
+
   scope :for_budget_item, lambda { |item|
     with_user_id(item.budget.user.id).between(item.budget.start, item.budget.end).where(:budget_post_id => item.budget_post.id)
   }
