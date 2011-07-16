@@ -16,16 +16,30 @@
     %thead
       %tr
         %th Budget post
-        %th Amount
+        %th Budgeted amount
+        %th Bookkept amount
+        %th Diff
     %tbody
       - @budget.budget_items.each do |budget_item|
         %tr
           %td= link_to budget_item.budget_post.name, budget_item.budget_post
           - klass = budget_item.amount >= 0 ? "plus" : "minus"
-          %td.currency{:class => klass}
-            = number_to_currency budget_item.amount
+          %td.currency{:class => klass}= number_to_currency budget_item.amount
+          - klass = budget_item.sum >= 0 ? "plus" : "minus"
+          %td.currency{:class => klass}= number_to_currency budget_item.sum
+          - klass = budget_item.diff >= 0 ? "plus" : "minus"
+          %td.currency{:class => klass}= number_to_currency budget_item.diff
     %tfoot
       %tr
+        %td Totalt
+        - klass = @budget.amount >= 0 ? "plus" : "minus"
+        %td.currency{:class => klass}= number_to_currency @budget.amount
+        - klass = @budget.sum >= 0 ? "plus" : "minus"
+        %td.currency{:class => klass}= number_to_currency @budget.sum
+        - klass = @budget.diff >= 0 ? "plus" : "minus"
+        %td.currency{:class => klass}= number_to_currency @budget.diff
+      %tr
         %th Budget post
-        %th Amount
-
+        %th Budgeted amount
+        %th Bookkept amount
+        %th Diff
