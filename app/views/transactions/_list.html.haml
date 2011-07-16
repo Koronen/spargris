@@ -12,7 +12,15 @@
         %td= transaction.description if transaction.description
         %td= modification_image_links(transaction)
   %tfoot
-    %th Tidsstämpel
-    %th Belopp
-    %th Beskrivning
+    %tr
+      %td
+      - sum = transactions.map(&:amount).sum
+      - klass = sum >= 0.0 ? "plus" : "minus"
+      %td.currency{:class => klass}= number_to_currency(sum)
+      %td Totalt
+      %td
+    %tr
+      %th Tidsstämpel
+      %th Belopp
+      %th Beskrivning
 
