@@ -33,6 +33,10 @@ class Budget < ActiveRecord::Base
     @amount ||= budget_items.sum(:amount)
   end
 
+  def sum
+    @sum ||= budget_items.inject(0) { |result, element| result + element.sum }
+  end
+
   def spent
     @spent ||= budget_items.inject(0) { |result, element| result + element.spent }
   end
