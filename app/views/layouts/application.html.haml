@@ -21,20 +21,20 @@
           %ul
             - if logged_in?
               %li.left{:class => active_tab?(:budget) ? "active" : ""}
-                = link_to Budget.human_name.pluralize, budgets_url
+                = link_to Budget.model_name.human.pluralize, budgets_url
               %li.left{:class => active_tab?(:budget_posts) ? "active" : ""}
-                = link_to BudgetPost.human_name.pluralize, budget_posts_url
+                = link_to BudgetPost.model_name.human.pluralize, budget_posts_url
               %li.left{:class => active_tab?(:transaction) ? "active" : ""}
-                = link_to Transaction.human_name.pluralize, transactions_url
+                = link_to Transaction.model_name.human.pluralize, transactions_url
               %li.left{:class => active_tab?(:vendor) ? "active" : ""}
-                = link_to Vendor.human_name.pluralize, vendors_url
+                = link_to Vendor.model_name.human.pluralize, vendors_url
               %li.left{:class => active_tab?(:tag) ? "active" : ""}
-                = link_to ActsAsTaggableOn::Tag.human_name.pluralize, tags_url
+                = link_to ActsAsTaggableOn::Tag.model_name.human.pluralize, tags_url
 
               %li.right
                 = link_to "Logout", logout_path
               %li.right{:class => active_tab?(:user) ? "active" : ""}
-                = link_to User.human_name, current_user
+                = link_to User.model_name.human, current_user
               %li.right
                 = link_to "Dashboard", dashboard_path
             - else
