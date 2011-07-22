@@ -182,7 +182,7 @@
 
     # Translate model names. Used in Model.human_name().
     models:
-      budget_post: "Budget"
+      budget: "Budget"
       budget_item: "Budgetrad"
       budget_post: "Budgetpost"
       transaction: "Transaktion"
@@ -195,18 +195,30 @@
 
     # Translate model attribute names. Used in Model.human_attribute_name(attribute).
     attributes:
-      budget_post:
+      budget:
+        start: "Start"
+        end: "Slut"
       budget_item:
+        budget_post: "Budgetpost"
+        amount: "Belopp"
       budget_post:
       transaction:
+        timestamp: "Tidsstämpel"
+        vendor: "Affär"
+        tag_list: "Taggar"
+        description: "Beskrivning"
       transaction_item:
+        budget_post: "Budgetpost"
+        amount: "Belopp"
       user:
       vendor:
         name: "Butiksnamn"
   views:
     pagination:
+      first: "Första"
       previous: "&lt; Föregående"
       next: "Nästa &gt;"
+      last: "Sista"
       truncate: "..."
 
   date:
