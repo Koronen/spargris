@@ -8,7 +8,7 @@ class TransactionItem < ActiveRecord::Base
   validates_numericality_of :amount
 
   scope :with_user_id, lambda { |uid|
-    joins(:transaction).where('transactions.user_id == ?', uid)
+    joins(:transaction).where('transactions.user_id = ?', uid)
   }
 
   scope :since, lambda { |time|

@@ -4,7 +4,7 @@ class BudgetPostsController < ApplicationController
   # GET /budget_posts
   # GET /budget_posts.xml
   def index
-    @budget_posts = current_user.budget_posts.alphabetical_order.page(params[:page])
+    @budget_posts = current_user.budget_posts.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

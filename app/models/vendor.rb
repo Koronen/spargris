@@ -5,5 +5,5 @@ class Vendor < ActiveRecord::Base
 
   validates_presence_of :name
 
-  scope :alphabetical_order, order("name ASC")
+  default_scope order("name ASC")
 end
