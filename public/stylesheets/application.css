@@ -19,7 +19,7 @@
 
 body {
   background-color: #333;
-  color: #eee;
+  color: #fff;
   font-family: "Lucida Grande", "Lucida Sans Unicode", verdana, geneva, sans-serif; /*verdana, arial, helvetica, sans-serif;*/
   /*line-height: 0.8em;*/
 }
@@ -312,5 +312,46 @@ ul.checkbox-list li {
 #errorExplanation ul li {
   font-size: 12px;
   list-style: square;
+}
+
+/* Forms */
+
+form.formtastic fieldset {
+  border: 0;
+}
+
+form.formtastic fieldset legend {
+  padding: 0 2px;
+  font-weight: bold;
+}
+
+form.formtastic fieldset label {
+  display: inline-block;
+  line-height: 1.8;
+  vertical-align: top;
+  width: 150px; /* Width of labels */
+}
+
+form.formtastic fieldset label em {
+  font-size:smaller;
+  display:block;
+}
+
+form.formtastic li {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+}
+
+form.formtastic input, form.formtastic textarea, form.formtastic select {
+  display: inline;
+}
+
+form.formtastic legend {
+  color: #fff;
+}
+
+.nested-fields fieldset.inputs {
+  border: 1px #fff solid;
 }
 
