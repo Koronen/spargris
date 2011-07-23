@@ -4,4 +4,6 @@
   = link_to image_tag("icons/wrench.png", :alt => "Edit"), edit_budget_post_path(@budget_post)
   = link_to image_tag("icons/delete.png", :alt => "Delete"), @budget_post, :confirm => 'Säker?', :method => :delete
 
+%p= @budget_post.description
+
 = render :partial => 'transactions/list', :locals => { :transactions => @transactions }
