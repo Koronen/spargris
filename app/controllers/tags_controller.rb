@@ -1,10 +1,11 @@
 class TagsController < ApplicationController
   def index
-    @tags = ActsAsTaggableOn::Tag.order("name ASC") #.page(params[:page])
+    @tags = ActsAsTaggableOn::Tag.where("name like ?", "%#{params[:q]}%").order("name ASC") #.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @tags }
+      format.json { render :json => @tags.map(&:attributes).each{|t| t[:value] = t['name'] } }
     end
   end
 
