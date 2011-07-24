@@ -17,6 +17,8 @@
   clear: both;
 }
 
+/* General */
+
 body {
   background-color: #333;
   color: #fff;
@@ -27,8 +29,6 @@ body {
 img {
   border: none;
 }
-
-/* General */
 
 body, p, ol, ul, td {
   font-size: 1em;
@@ -79,22 +79,13 @@ p {
   margin: 0.5em;
 }
 
-table {
-  background-color: #E13768;
-  margin: 0.2em;
+.nested-fields fieldset.inputs {
+  border: 1px #fff solid;
 }
-th, td {
-  padding: 0.1em 0.5em;
-}
-th {
-  background-color: #E13768;
-  color: #fff;
-}
-tr {
-  border-collapse: collapse;
-}
-td {
-  background-color: #333;
+
+/* Layout */
+#content {
+  padding: 1em;
 }
 
 /* Header */
@@ -163,61 +154,7 @@ td {
   text-decoration: none;
 }
 
-/* misc */
-#content {
-  padding: 1em;
-}
-
-dt {
-  font-weight: bold;
-}
-dd {
-  margin-left: 1em;
-}
-
-/* Sidebar (not used atm) */
-/*
-#sidebar {
-  width: 270px;
-  float: right;
-  background: #222;
-}
-
-#sidebar a {
-  color: #fff;
-}
-
-#sidebar a:hover {
-  text-decoration:none;
-  border:none;
-}
-
-#sidebar h2 {
-  font:150% Trebuchet MS;
-  color:#fff;
-}
-
-#sidebar ul {
-  margin-left:45px;
-}
-
-#sidebar input {
-  margin:0 0 0 30px;
-  background:#E13768;
-  border:1px solid #d02657;
-  font:100% Verdana;
-  color:#fff;
-  padding:4px;
-  width:200px;
-}
-*/
-
-/* Content */
-#content {
-  /*margin-right: 270px;*/
-  padding: 1em;
-}
-
+/* Flashes */
 #flash_notice {
   border: 0.1em #fff dotted;
   background-color: #555;
@@ -239,29 +176,34 @@ dd {
   padding: 0.3em;
 }
 
-ul.checkbox-list {
-  list-style: none;
+/* Tables */
+table {
+  background-color: #E13768;
+  margin: 0.2em;
+}
+th, td {
+  padding: 0.1em 0.5em;
+}
+th {
+  background-color: #E13768;
+  color: #fff;
+}
+tr {
+  border-collapse: collapse;
+}
+td {
+  background-color: #333;
 }
 
-ul.checkbox-list li {
-  display: inline;
-  margin: 0.1em;
+/* DLs */
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 1em;
 }
 
-/* Footer (not used atm) */
-/*
-#footer {
-  border-top:2px solid #111;
-  background:#222;
-  padding:15px;
-}
-
-#footer a {
-  color:#ccc;
-}
-*/
-
-/* currency */
+/* Currency */
 .currency {
   background-color: #404040;
   font-family: "Courier New", monospace;
@@ -277,81 +219,9 @@ ul.checkbox-list li {
   color: #ff0000;
 }
 
-/* Rails errors */
-.fieldWithErrors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
-#errorExplanation {
-  width: 400px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
-
-#errorExplanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  background-color: #c00;
-  color: #fff;
-}
-
-#errorExplanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 5px;
-}
-
-#errorExplanation ul li {
-  font-size: 12px;
-  list-style: square;
-}
-
-/* Forms */
-
-form.formtastic fieldset {
-  border: 0;
-}
-
-form.formtastic fieldset legend {
-  padding: 0 2px;
-  font-weight: bold;
-}
-
-form.formtastic fieldset label {
-  display: inline-block;
-  line-height: 1.8;
-  vertical-align: top;
-  width: 150px; /* Width of labels */
-}
-
-form.formtastic fieldset label em {
-  font-size:smaller;
-  display:block;
-}
-
-form.formtastic li {
-  list-style: none;
-  padding: 5px;
-  margin: 0;
-}
-
-form.formtastic input, form.formtastic textarea, form.formtastic select {
-  display: inline;
-}
+/* Fixes */
 
 form.formtastic legend {
-  color: #fff;
-}
-
-.nested-fields fieldset.inputs {
-  border: 1px #fff solid;
+  color: #fff !important;
 }
 
