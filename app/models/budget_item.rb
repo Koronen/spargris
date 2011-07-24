@@ -6,6 +6,8 @@ class BudgetItem < ActiveRecord::Base
 
   validates_presence_of :amount, :budget_post_id
 
+  default_scope joins(:budget_post).order("budget_posts.name ASC")
+
   def spent
     @transaction_items ||= TransactionItem.for_budget_item(self)
     @spent ||= -@transaction_items.spendings.sum(:amount)
