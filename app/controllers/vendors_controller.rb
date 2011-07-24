@@ -4,7 +4,7 @@ class VendorsController < ApplicationController
   # GET /vendors
   # GET /vendors.xml
   def index
-    @vendors = Vendor.page(params[:page])
+    @vendors = current_user.vendors.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -37,13 +37,13 @@ class VendorsController < ApplicationController
 
   # GET /vendors/1/edit
   def edit
-    @vendor = Vendor.find(params[:id])
+    @vendor = current_user.vendors.find(params[:id])
   end
 
   # POST /vendors
   # POST /vendors.xml
   def create
-    @vendor = Vendor.new(params[:vendor])
+    @vendor = current_user.vendors.new(params[:vendor])
 
     respond_to do |format|
       if @vendor.save
