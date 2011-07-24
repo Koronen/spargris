@@ -20,6 +20,8 @@ class Transaction < ActiveRecord::Base
 
   acts_as_taggable
 
+  default_scope order("timestamp DESC")
+
   scope :since, lambda { |time|
     where('timestamp >= ?', time)
   }
@@ -35,7 +37,7 @@ class Transaction < ActiveRecord::Base
   scope :chronological_order, order("timestamp ASC")
   scope :reverse_chronological_order, order("timestamp DESC")
 
-  scope :recent, lambda { |count| reverse_chronological_order.limit(count) }
+  scope :recent, lambda { |count| limit(count) }
 
   def amount
     @amount ||= transaction_items.sum(:amount)

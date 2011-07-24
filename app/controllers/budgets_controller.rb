@@ -4,7 +4,7 @@ class BudgetsController < ApplicationController
   # GET /budgets
   # GET /budgets.xml
   def index
-    @budgets = current_user.budgets.reverse_chronological_order.page(params[:page])
+    @budgets = current_user.budgets.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -28,10 +28,11 @@ class BudgetsController < ApplicationController
   def new
     if params[:template]
       @budget = current_user.budgets.find(params[:template])
+      @budget.id = nil
     else
       @budget = current_user.budgets.new
-      @budget.start = Time.zone.now
-      @budget.end = 1.hour.from_now
+      @budget.start = Time.zone.now.to_datetime.beginning_of_month.beginning_of_day
+      @budget.end = Time.zone.now.to_datetime.end_of_month.end_of_day
     end
 
     respond_to do |format|

@@ -8,6 +8,8 @@ class Budget < ActiveRecord::Base
 
   validates_presence_of :user, :start, :end
 
+  default_scope order("start DESC")
+
   scope :current, lambda {
     where('start < ? AND end > ?', Time.zone.now, Time.zone.now)
   }

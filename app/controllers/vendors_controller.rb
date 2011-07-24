@@ -16,7 +16,7 @@ class VendorsController < ApplicationController
   # GET /vendors/1.xml
   def show
     @vendor = current_user.vendors.find(params[:id])
-    @transactions = @vendor.transactions.reverse_chronological_order.page(params[:page])
+    @transactions = @vendor.transactions.page(params[:page])
 
     respond_to do |format|
       format.html # show.html.erb

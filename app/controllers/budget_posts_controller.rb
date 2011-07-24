@@ -79,7 +79,7 @@ class BudgetPostsController < ApplicationController
     @budget_post.destroy
 
     respond_to do |format|
-      format.html { redirect_to(categories_url, :notice => t('categories.destroy.success_notice')) }
+      format.html { redirect_to(budget_posts_url, :notice => t('categories.destroy.success_notice')) }
       format.xml  { head :ok }
     end
   end

@@ -1,12 +1,10 @@
 class TransactionsController < ApplicationController
   before_filter :require_login
 
-  auto_complete_for :vendor, :name
-
   # GET /transactions
   # GET /transactions.xml
   def index
-    @transactions = current_user.transactions.reverse_chronological_order.page(params[:page])
+    @transactions = current_user.transactions.page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -30,9 +28,13 @@ class TransactionsController < ApplicationController
   def new
     if params[:template]
       @transaction = current_user.transactions.find(params[:template])
+      @transaction.id = nil
     else
       @transaction = Transaction.new
     end
+
+    @transaction.timestamp = Time.zone.now unless @transaction.timestamp
+    @transaction.transaction_items.build(1) if @transaction.transaction_items.blank?
 
     respond_to do |format|
       format.html # new.html.erb
