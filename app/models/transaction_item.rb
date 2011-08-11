@@ -2,7 +2,7 @@ class TransactionItem < ActiveRecord::Base
   belongs_to :transaction
   belongs_to :budget_post
 
-  attr_accessible :transaction_id, :amount, :budget_post_id
+  attr_accessible :transaction_id, :amount, :budget_post_id, :description
 
   validates_presence_of :amount, :budget_post_id
   validates_numericality_of :amount

@@ -2,6 +2,7 @@
   %thead
     %th Tidsstämpel
     %th Belopp
+    %th Affär
     %th Beskrivning
   %tbody
     - transactions.each do |transaction|
@@ -9,6 +10,7 @@
         %td= transaction.timestamp.to_s(:iso8601)
         - klass = transaction.amount >= 0.0 ? "plus" : "minus"
         %td.currency{:class => klass}= number_to_currency(transaction.amount)
+        %td= link_to(transaction.vendor.name, transaction.vendor) if transaction.vendor
         %td= transaction.description if transaction.description
         %td= modification_image_links(transaction)
   %tfoot
@@ -19,8 +21,10 @@
       %td.currency{:class => klass}= number_to_currency(sum)
       %td Totalt
       %td
+      %td
     %tr
       %th Tidsstämpel
       %th Belopp
+      %th Affär
       %th Beskrivning
 
