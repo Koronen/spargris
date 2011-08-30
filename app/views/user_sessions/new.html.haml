@@ -1,22 +1,9 @@
-<% title "Login" %>
+- title "Login"
 
-<% form_for @user_session do |f| %>
-  <% if @user_session.errors.any? %>
-    <div id="errorExplanation">
-      <ul>
-      <% @user_session.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <p>
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </p>
-  <p>
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </p>
-  <p><%= f.submit 'Login' %></p>
-<% end %>
+= semantic_form_for @user_session do |f|
+  = f.semantic_errors
+  = f.inputs do
+    = f.input :username
+    = f.input :password
+  = f.buttons do
+    = f.submit
