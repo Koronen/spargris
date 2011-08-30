@@ -3,11 +3,11 @@
     = form.input :start
     = form.input :end
 
-  %h3 Tasks
-  = form.semantic_fields_for :budget_items do |item|
-    = render 'budget_item_fields', :f => item
-  .links
-    = link_to_add_association 'add budget item', form, :budget_items
-
-  = form.submit
+  = form.inputs :name => BudgetItem.model_name.human do
+    = form.semantic_fields_for :budget_items do |item|
+      = render 'budget_item_fields', :f => item
+    .links
+      = link_to_add_association 'add budget item', form, :budget_items
+  = form.buttons do
+    = form.submit
 
