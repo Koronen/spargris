@@ -1,58 +1,47 @@
-GIT
-  remote: git://github.com/binarylogic/authlogic.git
-  revision: 2da24e490ace2bf99bcfd57ee4d5d31dd2e2b2be
-  specs:
-    authlogic (3.0.3)
-      activerecord (>= 3.0.7)
-      activerecord (>= 3.0.7)
-
-GIT
-  remote: git://github.com/mbleigh/acts-as-taggable-on.git
-  revision: 2752cfef4c66318d0925fbe880d5392ad188bb50
-  specs:
-    acts-as-taggable-on (2.0.6)
-
-GIT
-  remote: http://github.com/kwi/i18n_routing
-  revision: 0bfe59dce32bc65f1ce336b8c71f3010ffe9859d
-  specs:
-    i18n_routing (0.4.7)
-      i18n (> 0.3.5)
-
 GEM
   remote: http://rubygems.org/
   specs:
-    ZenTest (4.5.0)
-    abstract (1.0.0)
-    actionmailer (3.0.9)
-      actionpack (= 3.0.9)
-      mail (~> 2.2.19)
-    actionpack (3.0.9)
-      activemodel (= 3.0.9)
-      activesupport (= 3.0.9)
-      builder (~> 2.1.2)
-      erubis (~> 2.6.6)
-      i18n (~> 0.5.0)
-      rack (~> 1.2.1)
-      rack-mount (~> 0.6.14)
-      rack-test (~> 0.5.7)
-      tzinfo (~> 0.3.23)
-    activemodel (3.0.9)
-      activesupport (= 3.0.9)
-      builder (~> 2.1.2)
-      i18n (~> 0.5.0)
-    activerecord (3.0.9)
-      activemodel (= 3.0.9)
-      activesupport (= 3.0.9)
-      arel (~> 2.0.10)
-      tzinfo (~> 0.3.23)
-    activeresource (3.0.9)
-      activemodel (= 3.0.9)
-      activesupport (= 3.0.9)
-    activesupport (3.0.9)
+    RedCloth (4.2.8)
+    actionmailer (3.1.0.rc5)
+      actionpack (= 3.1.0.rc5)
+      mail (~> 2.3.0)
+    actionpack (3.1.0.rc5)
+      activemodel (= 3.1.0.rc5)
+      activesupport (= 3.1.0.rc5)
+      builder (~> 3.0.0)
+      erubis (~> 2.7.0)
+      i18n (~> 0.6)
+      rack (~> 1.3.1)
+      rack-cache (~> 1.0.2)
+      rack-mount (~> 0.8.1)
+      rack-test (~> 0.6.0)
+      sprockets (~> 2.0.0.beta.12)
+    activemodel (3.1.0.rc5)
+      activesupport (= 3.1.0.rc5)
+      bcrypt-ruby (~> 2.1.4)
+      builder (~> 3.0.0)
+      i18n (~> 0.6)
+    activerecord (3.1.0.rc5)
+      activemodel (= 3.1.0.rc5)
+      activesupport (= 3.1.0.rc5)
+      arel (~> 2.1.4)
+      tzinfo (~> 0.3.29)
+    activeresource (3.1.0.rc5)
+      activemodel (= 3.1.0.rc5)
+      activesupport (= 3.1.0.rc5)
+    activesupport (3.1.0.rc5)
+      multi_json (~> 1.0)
+    acts-as-taggable-on (2.1.1)
+      rails
+    addressable (2.2.6)
     archive-tar-minitar (0.5.2)
-    arel (2.0.10)
-    builder (2.1.2)
+    arel (2.1.4)
+    authlogic (3.0.3)
+      activerecord (>= 3.0.7)
+      activerecord (>= 3.0.7)
+    bcrypt-ruby (2.1.4)
+    builder (3.0.0)
+    cancan (1.6.5)
     capistrano (2.6.0)
       highline
       net-scp (>= 1.0.0)
@@ -69,6 +58,10 @@ GEM
     childprocess (0.2.0)
       ffi (~> 1.0.6)
     cocoon (1.0.5)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.1.2)
     columnize (0.3.3)
     cucumber (1.0.2)
       builder (>= 2.1.2)
@@ -82,8 +75,9 @@ GEM
       nokogiri (>= 1.4.6)
     database_cleaner (0.6.7)
     diff-lcs (1.1.2)
-    erubis (2.6.6)
-      abstract (>= 1.0.0)
+    erubis (2.7.0)
+    execjs (1.2.4)
+      multi_json (~> 1.0)
     ffi (1.0.9)
     formtastic (1.2.4)
       actionpack (>= 2.3.7)
@@ -91,9 +85,24 @@ GEM
       i18n (~> 0.4)
     gherkin (2.4.5)
       json (>= 1.4.6)
+    guard (0.6.2)
+      thor (~> 0.14.6)
+    guard-cucumber (0.6.1)
+      cucumber (>= 0.10)
+      guard (>= 0.4.0)
+    guard-rspec (0.4.3)
+      guard (>= 0.4.0)
     haml (3.1.2)
+    haml-rails (0.3.4)
+      actionpack (~> 3.0)
+      activesupport (~> 3.0)
+      haml (~> 3.0)
+      railties (~> 3.0)
     highline (1.6.2)
-    i18n (0.5.0)
+    hike (1.2.1)
+    i18n (0.6.0)
+    i18n_routing (0.4.8)
+      i18n (> 0.3.5)
     jquery-rails (1.0.12)
       railties (~> 3.0)
       thor (~> 0.14)
@@ -101,15 +110,18 @@ GEM
     json_pure (1.5.3)
     kaminari (0.12.4)
       rails (>= 3.0.0)
+    launchy (2.0.5)
+      addressable (~> 2.2.6)
+    libnotify (0.5.7)
     linecache19 (0.5.12)
       ruby_core_source (>= 0.1.4)
     machinist (2.0.0.beta2)
-    mail (2.2.19)
-      activesupport (>= 2.3.6)
+    mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    multi_json (1.0.3)
     mysql2 (0.2.7)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
@@ -119,28 +131,38 @@ GEM
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
     nokogiri (1.5.0)
-    polyglot (0.3.1)
-    rack (1.2.3)
-    rack-mount (0.6.14)
+    pickle (0.4.8)
+      cucumber (>= 0.8)
+      rake
+    polyglot (0.3.2)
+    rack (1.3.2)
+    rack-cache (1.0.3)
+      rack (>= 0.4)
+    rack-mount (0.8.2)
       rack (>= 1.0.0)
-    rack-test (0.5.7)
+    rack-ssl (1.3.2)
+      rack
+    rack-test (0.6.1)
       rack (>= 1.0)
-    rails (3.0.9)
-      actionmailer (= 3.0.9)
-      actionpack (= 3.0.9)
-      activerecord (= 3.0.9)
-      activeresource (= 3.0.9)
-      activesupport (= 3.0.9)
+    rails (3.1.0.rc5)
+      actionmailer (= 3.1.0.rc5)
+      actionpack (= 3.1.0.rc5)
+      activerecord (= 3.1.0.rc5)
+      activeresource (= 3.1.0.rc5)
+      activesupport (= 3.1.0.rc5)
       bundler (~> 1.0)
-      railties (= 3.0.9)
-    railties (3.0.9)
-      actionpack (= 3.0.9)
-      activesupport (= 3.0.9)
+      railties (= 3.1.0.rc5)
+    railties (3.1.0.rc5)
+      actionpack (= 3.1.0.rc5)
+      activesupport (= 3.1.0.rc5)
+      rack-ssl (~> 1.3.2)
       rake (>= 0.8.7)
       rdoc (~> 3.4)
-      thor (~> 0.14.4)
+      thor (~> 0.14.6)
     rake (0.9.2)
-    rdoc (3.8)
+    rb-inotify (0.8.6)
+      ffi (>= 0.5.0)
+    rdoc (3.9.4)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
       rspec-expectations (~> 2.6.0)
@@ -165,19 +187,38 @@ GEM
     ruby_core_source (0.1.5)
       archive-tar-minitar (>= 0.5.2)
     rubyzip (0.9.4)
+    sass (3.1.7)
+    sass-rails (3.1.0.rc.5)
+      actionpack (~> 3.1.0.rc1)
+      railties (~> 3.1.0.rc1)
+      sass (>= 3.1.4)
+      sprockets (>= 2.0.0.beta.9)
     selenium-webdriver (0.2.2)
       childprocess (>= 0.1.9)
       ffi (>= 1.0.7)
       json_pure
       rubyzip
+    sprockets (2.0.0)
+      hike (~> 1.2)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.3)
     sqlite3-ruby (1.3.3)
       sqlite3 (>= 1.3.3)
     term-ansicolor (1.0.6)
     thor (0.14.6)
-    treetop (1.4.9)
+    tilt (1.3.3)
+    treetop (1.4.10)
+      polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.29)
+    uglifier (1.0.2)
+      execjs (>= 0.3.0)
+      multi_json (>= 1.0.2)
+    webrat (0.7.3)
+      nokogiri (>= 1.2.0)
+      rack (>= 1.0)
+      rack-test (>= 0.5.3)
     xpath (0.1.4)
       nokogiri (~> 1.3)
 
@@ -185,23 +226,36 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ZenTest
-  acts-as-taggable-on!
-  authlogic (~> 3.0.3)!
+  RedCloth
+  acts-as-taggable-on
+  arel (= 2.1.4)
+  authlogic (~> 3.0.3)
+  cancan
   capistrano
   capybara
   cocoon
+  coffee-script
   cucumber-rails
   database_cleaner
   formtastic
-  haml
-  i18n_routing!
+  guard
+  guard-cucumber
+  guard-rspec
+  haml-rails
+  i18n_routing
   jquery-rails
   kaminari
+  launchy
+  libnotify
   machinist (>= 2.0.0.beta2)
-  mysql2 (= 0.2.7)
-  rails (~> 3.0.9)
-  rspec (>= 2.0.0.beta.11)
-  rspec-rails (>= 2.0.0.beta.11)
+  mysql2
+  pickle
+  rails (= 3.1.0.rc5)
+  rb-inotify
+  rspec-rails
   ruby-debug19
+  sass-rails (~> 3.1.0.rc)
+  sqlite3
   sqlite3-ruby
+  uglifier
+  webrat

@@ -1,53 +1,77 @@
 source 'http://rubygems.org'
 
-# Rails itself
-gem 'rails', '~> 3.0.9'
+gem 'rails', '3.1.0.rc5'
+gem 'arel', '2.1.4'
+
+# Bundle edge Rails instead:
+# gem 'rails',     :git => 'git://github.com/rails/rails.git'
+
+gem 'sqlite3'
 
 # Deploy with Capistrano
 gem 'capistrano'
 
 # Authentication
-gem 'authlogic', '~> 3.0.3', :git => 'git://github.com/binarylogic/authlogic.git'
+gem 'authlogic', '~> 3.0.3'
 #gem 'devise'
 
 # Authorization
-#gem 'cancan'
+gem 'cancan'
+
+# Asset template engines
+gem 'sass-rails', "~> 3.1.0.rc"
+gem 'coffee-script'
+gem 'uglifier'
 
 # Markup
-gem 'haml'
-#gem 'RedCloth'
-gem 'formtastic'
+gem 'haml-rails'
 gem 'jquery-rails'
+gem 'formtastic'
+gem 'RedCloth'
 gem 'cocoon'
-#gem 'simple-navigation'
 
 # Structure
-gem 'acts-as-taggable-on', :git => 'git://github.com/mbleigh/acts-as-taggable-on.git'
-#gem 'acts_as_tree' => 'git://github.com/rails/acts_as_tree.git'
+#gem 'simple-navigation'
+gem 'acts-as-taggable-on'
+#gem 'ancestry'
 #gem 'friendly_id'
 gem 'kaminari'
 
 # I18n
-gem 'i18n_routing', :git => 'http://github.com/kwi/i18n_routing'
+gem 'i18n_routing'
 
-# Production gems
 group :production do
-  gem 'mysql2', '0.2.7'
+  gem 'mysql2'
 end
 
-# Development and test gems
 group :development, :test do
+  gem 'rspec-rails'
+end
+
+group :development do
+  gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'sqlite3-ruby'
-  gem 'mysql2', '0.2.7'
+end
 
-  gem 'ruby-debug19'
-
-  gem 'rspec', '>= 2.0.0.beta.11'
-  gem 'rspec-rails', '>= 2.0.0.beta.11'
+group :test do
+  gem 'cucumber-rails'
+  gem 'pickle'
+  gem 'capybara'
+  gem 'webrat'
+  gem 'launchy'
   gem 'machinist', '>= 2.0.0.beta2'
   gem 'database_cleaner'
-  gem 'capybara'
-  gem 'cucumber-rails'
-  gem 'ZenTest'
+
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
+
+  # notifications on linux
+  gem 'rb-inotify', :require => false if RUBY_PLATFORM =~ /linux/i
+  gem 'libnotify', :require => false if RUBY_PLATFORM =~ /linux/i
+
+  # notifications on mac
+  gem 'rb-fsevent', :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'growl', :require => false if RUBY_PLATFORM =~ /darwin/i
 end
 
