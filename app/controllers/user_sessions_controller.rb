@@ -4,7 +4,7 @@ class UserSessionsController < ApplicationController
   end
   
   def create
-    @user_session = UserSession.new(params[:user_session])
+    @user_session = UserSession.new(params[:user_session].reject{|k,v| k == "commit"})
     if @user_session.save
       # notify the user of successful login
       flash[:notice] = "Successfully logged in."

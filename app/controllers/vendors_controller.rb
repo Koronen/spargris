@@ -4,7 +4,7 @@ class VendorsController < ApplicationController
   # GET /vendors
   # GET /vendors.xml
   def index
-    @vendors = current_user.vendors.page(params[:page])
+    @vendors = current_user.vendors.page(params[:page]).per(params[:per])
 
     respond_to do |format|
       format.html # index.html.erb

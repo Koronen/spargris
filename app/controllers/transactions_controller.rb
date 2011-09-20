@@ -4,7 +4,7 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.xml
   def index
-    @transactions = current_user.transactions.page(params[:page])
+    @transactions = current_user.transactions.page(params[:page]).per(params[:per])
 
     respond_to do |format|
       format.html # index.html.erb

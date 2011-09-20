@@ -27,7 +27,7 @@ class DashboardController < ApplicationController
     @stats[:'90d'][:days] = 90
     @stats[:'180d'][:days] = 180
     transactions = current_user.transactions
-    @stats[:total][:days] = (transactions.last.timestamp - transactions.first.timestamp)/1.day
+    @stats[:total][:days] = -(transactions.last.timestamp - transactions.first.timestamp)/1.day
     
     [:this_month, :'30d', :'90d', :'180d', :total].each do |tf|
       @stats[tf][:result] = @stats[tf][:spendings] + @stats[tf][:earnings]
