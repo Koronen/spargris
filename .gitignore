@@ -1,6 +1,7 @@
 .bundle
 config/configuration.yml
 config/database.yml
+db/backup/*
 db/*.sql
 db/*.sqlite3
 .DS_Store
