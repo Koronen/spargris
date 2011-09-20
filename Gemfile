@@ -32,22 +32,25 @@ gem 'i18n_routing', :git => 'http://github.com/kwi/i18n_routing'
 
 # Production gems
 group :production do
-  gem 'mysql2', '0.2.7'
+  gem 'mysql2'
 end
 
 # Development and test gems
 group :development, :test do
   gem 'sqlite3-ruby'
-  gem 'mysql2', '0.2.7'
+  gem 'mysql2'
 
   gem 'ruby-debug19'
 
-  gem 'rspec', '>= 2.0.0.beta.11'
-  gem 'rspec-rails', '>= 2.0.0.beta.11'
+  gem 'rspec'
+  gem 'rspec-rails'
   gem 'machinist', '>= 2.0.0.beta2'
   gem 'database_cleaner'
   gem 'capybara'
   gem 'cucumber-rails'
-  gem 'ZenTest'
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-rspec'
+  gem 'guard-cucumber'
 end
 
