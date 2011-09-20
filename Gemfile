@@ -14,7 +14,7 @@ gem 'authlogic', '~> 3.0.3', :git => 'git://github.com/binarylogic/authlogic.git
 #gem 'cancan'
 
 # Markup
-gem 'haml'
+gem 'haml-rails'
 #gem 'RedCloth'
 gem 'formtastic'
 gem 'jquery-rails'
