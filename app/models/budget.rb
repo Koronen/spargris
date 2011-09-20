@@ -3,32 +3,32 @@ class Budget < ActiveRecord::Base
   has_many :budget_items
   has_many :budget_posts, :through => :budget_items
 
-  attr_accessible :start, :end, :budget_items_attributes
+  attr_accessible :starts_at, :ends_at, :budget_items_attributes
   accepts_nested_attributes_for :budget_items, :allow_destroy => true
 
-  validates_presence_of :user, :start, :end
+  validates_presence_of :user, :starts_at, :ends_at
 
-  default_scope order("start DESC")
+  default_scope order("starts_at DESC")
 
   scope :current, lambda {
-    where('start < ? AND end > ?', Time.zone.now, Time.zone.now)
+    where('starts_at < ? AND ends_at > ?', Time.zone.now, Time.zone.now)
   }
 
-  scope :chronological_order, order("start ASC")
-  scope :reverse_chronological_order, order("start DESC")
+  scope :chronological_order, order("starts_at ASC")
+  scope :reverse_chronological_order, order("starts_at DESC")
 
   def days
-    @days ||= (self.end-self.start)/1.day.to_f
+    @days ||= (self.ends_at-self.starts_at)/1.day.to_f
   end
 
   def days_gone
-    return 0 if self.start.future?
-    [(Time.zone.now-self.start)/1.day.to_f, days].min
+    return 0 if self.starts_at.future?
+    [(Time.zone.now-self.starts_at)/1.day.to_f, days].min
   end
 
   def days_left
-    return days if self.start.future?
-    [(self.end-Time.zone.now)/1.day.to_f, 0].max
+    return days if self.starts_at.future?
+    [(self.ends_at-Time.zone.now)/1.day.to_f, 0].max
   end
 
   def amount
@@ -57,23 +57,23 @@ class Budget < ActiveRecord::Base
   end
 
   def spent_per_day
-    return 0 if self.start.future?
+    return 0 if self.starts_at.future?
     self.spent / self.days_gone
   end
 
   def earned_per_day
-    return 0 if self.start.future?
+    return 0 if self.starts_at.future?
     self.earned / self.days_gone
   end
 
   def difference_per_day
-    return 0 if self.start.future?
+    return 0 if self.starts_at.future?
     self.diff / self.days_gone
   end
   alias :diff_per_day :difference_per_day
 
   def margin_per_day
-    return 0 if self.end.past?
+    return 0 if self.ends_at.past?
     self.margin / self.days_left
   end
 end
