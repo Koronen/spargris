@@ -1,5 +1,5 @@
 class BudgetPost < ActiveRecord::Base
-  attr_accessible :user_id, :name, :description, :parent
+  attr_accessible :user_id, :name, :description, :parent_id
 
   belongs_to :user
 
