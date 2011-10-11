@@ -7,8 +7,8 @@ gem 'rails', '~> 3.0.9'
 gem 'capistrano'
 
 # Authentication
-gem 'authlogic', '~> 3.0.3', :git => 'git://github.com/binarylogic/authlogic.git'
-#gem 'devise'
+#gem 'authlogic', '~> 3.0.3', :git => 'git://github.com/binarylogic/authlogic.git'
+gem 'devise'
 
 # Authorization
 #gem 'cancan'

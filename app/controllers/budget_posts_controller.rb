@@ -1,6 +1,4 @@
 class BudgetPostsController < ApplicationController
-  before_filter :require_login
-
   # GET /budget_posts
   # GET /budget_posts.xml
   def index

@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-  before_filter :require_login, :unless => [:new, :create]
-
   def show
     @user = User.find(params[:id])
 

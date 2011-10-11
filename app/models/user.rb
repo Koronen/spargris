@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
-  acts_as_authentic
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :time_zone, :language, :remember_me
 
   has_many :transactions
   has_many :transaction_items, :through => :transactions
