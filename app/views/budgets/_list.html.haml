@@ -8,8 +8,8 @@
   %tbody
     - budgets.each do |budget|
       %tr
-        %td= budget.start.to_s(:short)
-        %td= budget.end.to_s(:short)
+        %td= budget.starts_at.to_s(:short)
+        %td= budget.ends_at.to_s(:short)
         - klass = budget.diff >= 0 ? "plus" : "minus"
         %td.currency{:class => klass}
           = number_to_currency budget.diff
