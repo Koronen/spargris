@@ -11,7 +11,7 @@ class Transaction < ActiveRecord::Base
   validates_presence_of :timestamp
 
   def vendor_name
-    self.vendor.name
+    self.vendor.try(:name)
   end
 
   def vendor_name=(name)

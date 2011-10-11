@@ -4,11 +4,12 @@ class VendorsController < ApplicationController
   # GET /vendors
   # GET /vendors.xml
   def index
-    @vendors = current_user.vendors.page(params[:page]).per(params[:per])
+    @vendors = current_user.vendors.where("name like ?", "%#{params[:term]}%").page(params[:page]).per(params[:per])
 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @vendors }
+      format.json { render :json => @vendors.map(&:attributes).each{|t| t[:value] = t['name'] } }
     end
   end
 

@@ -42,4 +42,9 @@ $(function() {
 		});
 
     $('#transaction_timestamp').datetimepicker({ dateFormat: 'yy-mm-dd', timeFormat: 'hh:mm:ss' });
+
+     $( "#transaction_vendor_name" ).autocomplete({
+       source: "/vendors",
+       minLength: 2,
+     });
 });
