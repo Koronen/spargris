@@ -41,7 +41,14 @@ describe Budget do
     end
   end
 
-  it "amount"
+  it "amount" do
+    budget = Budget.make! :budget_items => [
+      BudgetItem.make!(:amount => 100),
+      BudgetItem.make!(:amount => 20),
+      BudgetItem.make!(:amount => 3)
+    ]
+    budget.amount.should == 123
+  end
 
   it "sum"
 
