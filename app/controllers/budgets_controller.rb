@@ -29,8 +29,8 @@ class BudgetsController < ApplicationController
       @budget.id = nil
     else
       @budget = current_user.budgets.new
-      @budget.start = Time.zone.now.to_datetime.beginning_of_month.beginning_of_day
-      @budget.end = Time.zone.now.to_datetime.end_of_month.end_of_day
+      @budget.starts_at = Time.zone.now.to_datetime.beginning_of_month.beginning_of_day
+      @budget.ends_at = Time.zone.now.to_datetime.end_of_month.end_of_day
     end
 
     respond_to do |format|
@@ -48,8 +48,6 @@ class BudgetsController < ApplicationController
   # POST /budgets.xml
   def create
     @budget = current_user.budgets.new(params[:budget])
-    @budget.start = @budget.start.beginning_of_day
-    @budget.end = @budget.end.end_of_day
 
     respond_to do |format|
       if @budget.save
@@ -66,9 +64,6 @@ class BudgetsController < ApplicationController
   # PUT /budgets/1.xml
   def update
     @budget = current_user.budgets.find(params[:id])
-    #TODO: make adjustments below
-    #params[:budget][:start] = params[:budget][:start].beginning_of_day if params[:budget][:start]
-    #params[:budget][:end] = params[:budget][:end].end_of_day if params[:budget][:end]
 
     respond_to do |format|
       if @budget.update_attributes(params[:budget])
