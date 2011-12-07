@@ -1,6 +1,6 @@
 class AddLanguageToUser < ActiveRecord::Migration
   def self.up
-    add_column :users, :language, :string
+    add_column :users, :language, :string, :null => false, :default => ""
   end
 
   def self.down

@@ -1,7 +1,7 @@
 class CreateVendors < ActiveRecord::Migration
   def self.up
     create_table :vendors do |t|
-      t.string :name
+      t.string :name, :null => false, :default => ""
 
       t.timestamps
     end

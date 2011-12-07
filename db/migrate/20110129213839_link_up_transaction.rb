@@ -1,9 +1,9 @@
 class LinkUpTransaction < ActiveRecord::Migration
   def self.up
-    add_column :transactions, :user_id, :integer
-    add_column :transactions, :account_id, :integer
-    add_column :transactions, :vendor_id, :integer
-    add_column :transactions, :location_id, :integer
+    add_column :transactions, :user_id, :integer, :null => false, :default => 0
+    add_column :transactions, :account_id, :integer, :null => false, :default => 0
+    add_column :transactions, :vendor_id, :integer, :null => false, :default => 0
+    add_column :transactions, :location_id, :integer, :null => false, :default => 0
   end
 
   def self.down

@@ -1,6 +1,6 @@
 class AddCategoryToTransaction < ActiveRecord::Migration
   def self.up
-    add_column :transactions, :category_id, :integer
+    add_column :transactions, :category_id, :integer, :null => false, :default => 0
   end
 
   def self.down

@@ -2,8 +2,8 @@ class UpdateUsersForDevise < ActiveRecord::Migration
   def self.up
     rename_column :users, :crypted_password, :encrypted_password
 
-    add_column :users, :remember_token, :string
-    add_column :users, :remember_created_at, :datetime
+    add_column :users, :remember_token, :string, :null => false, :default => ""
+    add_column :users, :remember_created_at, :datetime, :null => false, :default => "1970-01-01 00:00"
 
     remove_column :users, :username
     remove_column :users, :password_salt

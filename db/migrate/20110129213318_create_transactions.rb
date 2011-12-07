@@ -1,9 +1,9 @@
 class CreateTransactions < ActiveRecord::Migration
   def self.up
     create_table :transactions do |t|
-      t.datetime :timestamp
-      t.float :amount
-      t.string :comment
+      t.datetime :timestamp, :null => false, :default => "1970-01-01 00:00"
+      t.float :amount, :null => false, :default => 0.0
+      t.string :comment, :null => false, :default => ""
 
       t.timestamps
     end

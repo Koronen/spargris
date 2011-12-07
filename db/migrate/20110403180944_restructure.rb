@@ -3,7 +3,7 @@ class Restructure < ActiveRecord::Migration
     remove_column :budgets, :amount
 
     rename_table :categories, :budget_posts
-    add_column :budget_posts, :user_id, :integer
+    add_column :budget_posts, :user_id, :integer, :null => false, :default => 0
 
     remove_column :transactions, :amount
     rename_column :transactions, :comment, :description
@@ -11,7 +11,7 @@ class Restructure < ActiveRecord::Migration
     remove_column :transactions, :location_id
     remove_column :transactions, :category_id
 
-    add_column :vendors, :user_id, :integer
+    add_column :vendors, :user_id, :integer, :null => false, :default => 0
   end
 
   def self.down
