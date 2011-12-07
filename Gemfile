@@ -52,8 +52,12 @@ group :development, :test do
   gem 'machinist', '>= 2.0.0.beta2'
   gem 'database_cleaner'
   gem 'capybara'
+
   gem 'guard'
   gem 'guard-bundler'
   gem 'guard-rspec'
   gem 'guard-cucumber'
+
+  gem 'rb-inotify'
+  gem 'libnotify'
 end
