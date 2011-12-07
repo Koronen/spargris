@@ -4,8 +4,6 @@ config/database.yml
 db/backup/*
 db/*.sql
 db/*.sqlite3
-.DS_Store
 doc/api/*
 log/*.log
 tmp/**/*
-*.swp
