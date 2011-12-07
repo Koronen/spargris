@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
   def index
-    @recent_transactions = current_user.transactions.recent(5)
+    @recent_transactions = current_user.transactions.limit(5)
     @current_budgets = current_user.budgets.current
 
     @stats = {}

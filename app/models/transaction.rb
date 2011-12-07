@@ -34,13 +34,8 @@ class Transaction < ActiveRecord::Base
     since(from).prior_to(to)
   }
 
-  scope :chronological_order, order("timestamp ASC")
-  scope :reverse_chronological_order, order("timestamp DESC")
-
-  scope :recent, lambda { |count| limit(count) }
-
   def amount
-    @amount ||= transaction_items.sum(:amount)
+    transaction_items.sum(:amount)
   end
 end
 
