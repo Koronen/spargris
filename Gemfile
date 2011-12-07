@@ -3,11 +3,13 @@ source 'http://rubygems.org'
 # Rails itself
 gem 'rails', '~> 3.0.9'
 
+# Database engine
+gem 'mysql2'
+
 # Deploy with Capistrano
 gem 'capistrano'
 
 # Authentication
-#gem 'authlogic', '~> 3.0.3', :git => 'git://github.com/binarylogic/authlogic.git'
 gem 'devise'
 
 # Authorization
@@ -18,39 +20,40 @@ gem 'haml-rails'
 #gem 'RedCloth'
 gem 'formtastic'
 gem 'jquery-rails'
-gem 'cocoon'
+gem 'cocoon', '~> 1.0.5'
 #gem 'simple-navigation'
 
 # Structure
-gem 'acts-as-taggable-on', :git => 'git://github.com/mbleigh/acts-as-taggable-on.git'
-#gem 'acts_as_tree' => 'git://github.com/rails/acts_as_tree.git'
+gem 'acts-as-taggable-on', '~> 2.1.1'
 #gem 'friendly_id'
-gem 'kaminari'
+gem 'kaminari', '~> 0.12.4'
 
 # I18n
-gem 'i18n_routing', :git => 'http://github.com/kwi/i18n_routing'
+gem 'i18n_routing', '~> 0.5.0'
 
 # Production gems
 group :production do
-  gem 'mysql2'
+  gem 'unicorn'
 end
 
-# Development and test gems
-group :development, :test do
-  gem 'sqlite3-ruby'
-  gem 'mysql2'
-
+# Development gems
+group :development do
   gem 'ruby-debug19'
+end
 
-  gem 'rspec'
+# Development and Test gems
+group :development, :test do
   gem 'rspec-rails'
+end
+
+# Test gems
+group :development, :test do
+  gem 'cucumber-rails'
   gem 'machinist', '>= 2.0.0.beta2'
   gem 'database_cleaner'
   gem 'capybara'
-  gem 'cucumber-rails'
   gem 'guard'
   gem 'guard-bundler'
   gem 'guard-rspec'
   gem 'guard-cucumber'
 end
-
