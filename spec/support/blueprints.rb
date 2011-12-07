@@ -10,7 +10,7 @@ BudgetPost.blueprint do
   user
   name { "BP#{sn}" }
   description { "Desc#{sn}" }
-  parent { nil }
+  parent_id { nil }
 end
 
 Budget.blueprint do
@@ -21,8 +21,8 @@ Budget.blueprint do
 end
 
 BudgetItem.blueprint do
-  amount { rand(100) }
   budget_post
+  amount { rand(100) }
 end
 
 Transaction.blueprint do
@@ -40,8 +40,9 @@ TransactionItem.blueprint do
 end
 
 User.blueprint do
-  username { "user#{sn}" }
-  email { "sample@example.com" }
+  email { "email#{sn}@example.com" }
+  password { "pw#{sn}" }
+  password_confirmation { object.password }
   time_zone { "London" }
   language { "en" }
 end
