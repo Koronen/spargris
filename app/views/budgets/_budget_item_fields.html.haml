@@ -2,4 +2,6 @@
   = f.inputs do
     = f.input :budget_post, {:include_blank => false}
     = f.input :amount
-    = link_to_remove_association "remove budget item", f
+    %li
+      %label
+      = link_to_remove_association "Remove budget item", f, :class => "btn small"

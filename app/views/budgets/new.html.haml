@@ -1,6 +1,8 @@
-- title new_title(@budget)
-%h2= new_title(@budget)
+- title "Budget"
 
 = render 'form'
 
-= link_to t('common.back'), budgets_path
+- content_for(:side) do
+  %h2 Actions
+  %ul
+    %li= link_to t('common.back'), budgets_path, :class => "btn"

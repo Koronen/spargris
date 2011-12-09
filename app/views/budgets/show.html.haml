@@ -1,8 +1,4 @@
-- title show_title(@budget)
-%h2
-  = show_title(@budget)
-  = link_to image_tag("icons/wrench.png", :alt => "Edit"), edit_budget_path(@budget)
-  = link_to image_tag("icons/delete.png", :alt => "Delete"), @budget, :confirm => 'Säker?', :method => :delete
+- title "Budget ##{@budget.id}"
 
 %p
   %dl
@@ -43,3 +39,9 @@
         %th Budgeted amount
         %th Bookkept amount
         %th Diff
+
+- content_for(:side) do
+  %h2 Actions
+  %ul.none
+    %li= link_to "Edit budget", edit_budget_path(@budget), :class => "btn"
+    %li= link_to "Delete budget", @budget, :confirm => 'Säker?', :method => :delete, :class => "btn danger"
