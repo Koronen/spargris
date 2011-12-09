@@ -47,4 +47,6 @@ $(function() {
        source: "/vendors",
        minLength: 2,
      });
+
+     $(".alert-message").alert()
 });

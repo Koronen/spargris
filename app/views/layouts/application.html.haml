@@ -4,50 +4,64 @@
     %meta{:"http-equiv" => "Content-Type", :content => "text/html; charset=UTF-8"}
     %title= build_title
     %link(rel="shortcut icon" href="/favicon.ico" type="image/x-icon")
-    = stylesheet_link_tag 'application'
-    = stylesheet_link_tag 'formtastic', 'formtastic_changes'
+    = stylesheet_link_tag 'http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css'
     = stylesheet_link_tag 'jquery-ui-1.8.14.custom', 'jquery-ui-timepicker'
-    = javascript_include_tag :defaults, 'jquery-ui-1.8.14.custom.min', 'jquery-ui-timepicker-addon.js'
+    = stylesheet_link_tag 'formtastic', 'formtastic_changes'
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag :defaults
+    = javascript_include_tag 'jquery-ui-1.8.14.custom.min', 'jquery-ui-timepicker-addon.js'
     = javascript_include_tag :cocoon
+    = javascript_include_tag 'http://twitter.github.com/bootstrap/1.4.0/bootstrap-alerts.js'
+    = javascript_include_tag 'http://twitter.github.com/bootstrap/1.4.0/bootstrap-buttons.js'
     = yield(:head)
     = csrf_meta_tag
 
   %body
-    %div#container
-      %div#header
-        %h1
-          = link_to "Spargris", root_url
-      %div.clear
-        %div#nav
-          %ul
+    %div.topbar
+      %div.fill
+        %div.container
+          = link_to "Spargris", root_path, :class => 'brand'
+
+          %ul.nav
             - if user_signed_in?
-              %li.left{:class => active_tab?(:budget) ? "active" : ""}
+              %li{:class => active_tab?(:budget) ? "active" : ""}
                 = link_to Budget.model_name.human.pluralize, budgets_url
-              %li.left{:class => active_tab?(:budget_posts) ? "active" : ""}
+              %li{:class => active_tab?(:budget_posts) ? "active" : ""}
                 = link_to BudgetPost.model_name.human.pluralize, budget_posts_url
-              %li.left{:class => active_tab?(:transaction) ? "active" : ""}
+              %li{:class => active_tab?(:transaction) ? "active" : ""}
                 = link_to Transaction.model_name.human.pluralize, transactions_url
-              %li.left{:class => active_tab?(:vendor) ? "active" : ""}
+              %li{:class => active_tab?(:vendor) ? "active" : ""}
                 = link_to Vendor.model_name.human.pluralize, vendors_url
-              %li.left{:class => active_tab?(:tag) ? "active" : ""}
+              %li{:class => active_tab?(:tag) ? "active" : ""}
                 = link_to ActsAsTaggableOn::Tag.model_name.human.pluralize, tags_url
 
-              %li.right
+              %li
                 = link_to "Logout", destroy_user_session_path, :method => :delete
-              %li.right
+              %li
               -# {:class => active_tab?(:user) ? "active" : ""}
               -#  = link_to User.model_name.human, current_user
-              %li.right
+              %li
                 = link_to "Dashboard", dashboard_path
             - else
-              %li.right
+              %li
                 = link_to "Login", new_user_session_path
-              %li.right
+              %li
                 = link_to "Register", new_user_registration_path
-          %div.clear
-        
-        %div#content
-          - flash.each do |name, msg|
-            = content_tag :div, msg, :id => "flash_#{name}"
-          = yield
+    %div.container
+      %div.content
+        %div.page-header
+          %h1
+            = yield(:title)
+            -# %small Supporting text or tagline
+        %div.row
+          %div.span10
+            - flash.each do |name, msg|
+              = content_tag :div, :class => "alert-message fade in #{name}", :"data-alert" => "alert" do
+                = msg
+                = link_to "X", "#", :class => "close"
+            = yield
+          %div.span4
+            = yield(:side)
 
+      %footer
+        %p &copy; Victor Koronen 2011

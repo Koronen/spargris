@@ -1,227 +1,32 @@
-/* Global */
-
-* {
-  margin: 0;
-  padding: 0;
+/* Overrides */
+html, body {
+  background-color: #eee;
 }
-
-.left {
-  float: left;
-}
-
-.right {
-  float: right;
-}
-
-.clear {
-  clear: both;
-}
-
-/* General */
-
 body {
-  background-color: #333;
-  color: #fff;
-  font-family: "Lucida Grande", "Lucida Sans Unicode", verdana, geneva, sans-serif; /*verdana, arial, helvetica, sans-serif;*/
-  /*line-height: 0.8em;*/
+  padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+}
+.container > footer p {
+  text-align: center; /* center align it with the container */
 }
 
-img {
-  border: none;
-}
-
-body, p, ol, ul, td {
-  font-size: 1em;
-}
-
-a, a:visited {
-  color: #ddd;
-  font-weight: normal;
-  text-decoration: none;
-}
-
-a:hover, a:active {
-  color: #fff;
-}
-
-pre {
-  background-color: #222;
-  padding: 10px;
-  font-size: 11px;
-}
-
-blockquote {
-  border-left: 2px solid #2f2f2f;
-  background-color: #323232;
-}
-
-h1 {
-  font-size: 3em;
-}
-
-h2 {
-  font: 2em Arial;
-  color: #fff;
-  margin: 0.5em 0em 0.5em 0em;
-}
-
-h2 a {
-  color: #fff;
-  text-decoration:none;
-  border-bottom: 2px solid #222;
-}
-
-h2 a:hover {
-  border-bottom: 2px solid #E13768;
-}
-
-p {
-  margin: 0.5em;
-}
-
-.nested-fields fieldset.inputs {
-  border: 1px #fff solid;
-}
-
-/* Layout */
-#content {
-  padding: 1em;
-}
-
-/* Header */
-#header {
-  background-color: #E13768;
-  margin: 0;
-  padding: 0;
-}
-
-#header h1 {
-  font-size: 4em;
-  font-family: verdana, arial, helvetica, sans-serif;
-  color: #fff;
-  font-weight: bold;
-  padding: 0.2em 0em 0.2em 0.2em;
-}
-
-#header h1 a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 1em;
-}
-
-#header h1 a:hover {
-  border:none;
-}
-
-/* Navigation */
-#nav {
-  background-color: #E13768;
-}
-
-#nav ul {
-  list-style: none;
-  padding: 0.5em 0em 1.6em 2em;
-}
-
-#nav ul li {
-  display: inline;
-  margin-right: 0.1em;
-}
-
-#nav ul li a {
-  background-color: #444;
-  color: #fff;
-  font-size: 0.75em;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0.5em;
-}
-
-#nav ul li a:hover {
-  background: #555;
-  color: #fff;
-  text-decoration: none;
-}
-
-#nav ul li.active a {
-  background-color: #333;
-  color: #fff;
-  text-decoration: none;
-}
-
-#nav ul li.active a:hover {
-  background-color: #333;
-  text-decoration: none;
-}
-
-/* Flashes */
-#flash_notice {
-  border: 0.1em #fff dotted;
-  background-color: #555;
-  color: #fff;
-  padding: 0.3em;
-}
-
-#flash_warning {
-  border: 0.1em #fff dotted;
-  background-color: #ffcd00;
-  color: #fff;
-  padding: 0.3em;
-}
-
-#flash_error {
-  border: 0.1em #f00000 dotted;
-  background-color: #800000;
-  color: #fff;
-  padding: 0.3em;
-}
-
-/* Tables */
-table {
-  background-color: #E13768;
-  margin: 0.2em;
-}
-th, td {
-  padding: 0.1em 0.5em;
-}
-th {
-  background-color: #E13768;
-  color: #fff;
-}
-tr {
-  border-collapse: collapse;
-}
-td {
-  background-color: #333;
-}
-
-/* DLs */
-dt {
-  font-weight: bold;
-}
-dd {
-  margin-left: 1em;
-}
-
-/* Currency */
-.currency {
-  background-color: #404040;
-  font-family: "Courier New", monospace;
-  text-align: right;
-  font-weight: bold;
-}
-
-.currency.plus {
-  color: #00ff00;
-}
-
-.currency.minus {
-  color: #ff0000;
+/* The white background content wrapper */
+.content {
+  background-color: #fff;
+  padding: 20px;
+  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+  -webkit-border-radius: 0 0 6px 6px;
+     -moz-border-radius: 0 0 6px 6px;
+          border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+     -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+          box-shadow: 0 1px 2px rgba(0,0,0,.15);
 }
 
 /* Fixes */
-
 form.formtastic legend {
   color: #fff !important;
 }
 
+ul.none {
+  list-style: none;
+}
