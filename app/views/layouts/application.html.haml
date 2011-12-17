@@ -35,13 +35,13 @@
               %li{:class => active_tab?(:tag) ? "active" : ""}
                 = link_to ActsAsTaggableOn::Tag.model_name.human.pluralize, tags_url
 
-              %li
-                = link_to "Logout", destroy_user_session_path, :method => :delete
-              %li
               -# {:class => active_tab?(:user) ? "active" : ""}
-              -#  = link_to User.model_name.human, current_user
+              %li
+                = link_to User.model_name.human, user_path
               %li
                 = link_to "Dashboard", dashboard_path
+              %li
+                = link_to "Logout", destroy_user_session_path, :method => :delete
             - else
               %li
                 = link_to "Login", new_user_session_path
