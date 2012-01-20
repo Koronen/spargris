@@ -52,9 +52,8 @@
         %div.page-header
           %h1
             = yield(:title)
-            -# %small Supporting text or tagline
         %div.row
-          %div.span10
+          %div.span12
             - flash.each do |name, msg|
               = content_tag :div, :class => "alert-message fade in #{name}", :"data-alert" => "alert" do
                 = msg
