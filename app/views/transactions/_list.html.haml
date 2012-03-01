@@ -11,7 +11,7 @@
         - klass = transaction.amount >= 0.0 ? "plus" : "minus"
         %td.currency{:class => klass}= number_to_currency(transaction.amount)
         %td= link_to(transaction.vendor.name, transaction.vendor) if transaction.vendor
-        %td= transaction.description if transaction.description
+        %td= truncate transaction.description if transaction.description
         %td= modification_image_links(transaction)
   %tfoot
     %tr

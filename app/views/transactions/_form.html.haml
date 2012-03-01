@@ -9,8 +9,10 @@
     = form.inputs :name => TransactionItem.model_name.human do
       = form.semantic_fields_for :transaction_items do |item|
         = render 'transaction_item_fields', :f => item
-      .links
-        = link_to_add_association 'Add item', form, :transaction_items
     = form.buttons do
-      = form.submit
-
+      = form.submit :class => "btn primary"
+      = link_to_add_association 'Add item', form, :transaction_items, {                         |
+        "data-association-insertion-node" => "form.transaction>.inputs>ol>.inputs>ol>div:last", |
+        "data-association-insertion-method" => "after",                                         |
+        :class => "btn"                                                                         |
+      }                                                                                         |
