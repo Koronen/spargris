@@ -1,9 +1,7 @@
-- title index_title(BudgetPost)
-
-%h2
-  = index_title(BudgetPost)
-  = link_to image_tag("icons/add.png", :alt => "New budget post"), new_budget_post_path
+- title "Budget post"
 
 = render :partial => "list", :locals => { :budget_posts => @budget_posts }
 
 = paginate @budget_posts
+
+= link_to "New budget post", new_budget_post_path

@@ -40,8 +40,11 @@
         %th Bookkept amount
         %th Diff
 
+= link_to "Edit budget", edit_budget_path(@budget), :class => "btn"
+= link_to "Delete budget", @budget, :confirm => 'Säker?', :method => :delete, :class => "btn danger"
+
 - content_for(:side) do
-  %h2 Actions
-  %ul.none
-    %li= link_to "Edit budget", edit_budget_path(@budget), :class => "btn"
-    %li= link_to "Delete budget", @budget, :confirm => 'Säker?', :method => :delete, :class => "btn danger"
+  %p
+    This page gives you a more detailed description of the given budget.
+    You can see what amount has been set for a given budget post,
+    how much of it has been spent and the difference.

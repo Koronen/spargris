@@ -4,7 +4,10 @@
 
 = paginate @budgets
 
+= link_to "New budget", new_budget_path, :class => "btn primary"
+
 - content_for(:side) do
-  %h2 Actions
-  %ul.none
-    %li= link_to "New budget", new_budget_path, :class => "btn primary"
+  %p
+    Budgets are a central part of this application.
+    Budgets allow you to plan your economy ahead of time,
+    as well as to keep track of progress.

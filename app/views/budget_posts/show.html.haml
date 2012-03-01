@@ -1,9 +1,8 @@
-- title show_title(@budget_post)
-%h2
-  = @budget_post.name
-  = link_to image_tag("icons/wrench.png", :alt => "Edit"), edit_budget_post_path(@budget_post)
-  = link_to image_tag("icons/delete.png", :alt => "Delete"), @budget_post, :confirm => 'Säker?', :method => :delete
+- title @budget_post.name
 
 %p= @budget_post.description
 
 = render :partial => 'transactions/list', :locals => { :transactions => @transactions }
+
+= link_to "Edit", edit_budget_post_path(@budget_post), :class => "btn"
+= link_to "Delete", @budget_post, :confirm => 'Säker?', :method => :delete, :class => "btn danger"
