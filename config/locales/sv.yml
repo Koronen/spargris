@@ -310,8 +310,33 @@
       user:
         unauthenticated: Du måste logga in först!
 
+  navigation:
+    budgets: Budgetar
+    all_budgets: Alla budgetar
+    new_budget: Ny budget
+
+    budget_posts: Budgetposter
+    all_budget_posts: Alla budgetposter
+    new_budget_post: Ny budgetpost
+
+    transactions: Transaktioner
+    all_transactions: Alla transaktioner
+    new_transaction: Ny transaktion
+
+    vendors: Affärer
+    all_vendors: Alla affärer
+    new_vendor: Ny affär
+
+    tags: Taggar
+    dashboard: Panel
+
+    my_page: Min sida
+    log_out: Logga ut
+
+    log_in: Logga in
+    register: Registrera
+
 # I18n routes
-#TODO: support swedish characters åäö
   routes:
     budgets:
       as: budgetar
