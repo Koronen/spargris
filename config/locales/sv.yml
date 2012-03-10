@@ -300,6 +300,16 @@
       # default value for :prompt => true in FormOptionsHelper
       prompt: "Välj"
 
+  devise:
+    sessions:
+      user:
+        signed_in: Inloggad!
+        signed_out: Utloggad!
+
+    failure:
+      user:
+        unauthenticated: Du måste logga in först!
+
 # I18n routes
 #TODO: support swedish characters åäö
   routes:

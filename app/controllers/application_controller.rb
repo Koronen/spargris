@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   before_filter :set_user_language
   before_filter :set_user_time_zone
 
-  private
+private
 
   # before filter
   def set_user_language
