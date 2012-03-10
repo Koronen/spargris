@@ -32,7 +32,7 @@ class TransactionsController < ApplicationController
     end
 
     @transaction.timestamp = Time.zone.now unless @transaction.timestamp
-    @transaction.transaction_items.build(1) if @transaction.transaction_items.blank?
+    @transaction.transaction_items.build if @transaction.transaction_items.blank?
 
     respond_to do |format|
       format.html # new.html.erb

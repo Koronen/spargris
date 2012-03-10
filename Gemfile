@@ -6,6 +6,18 @@ gem 'rails', '~> 3.1.0'
 # Database engine
 gem 'mysql2'
 
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails'
+  gem 'coffee-rails'
+ 
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer'
+ 
+  gem 'uglifier', '>= 1.0.3'
+end
+
 # Deploy with Capistrano
 gem 'capistrano'
 
@@ -17,16 +29,17 @@ gem 'devise', '~> 2.0.0'
 
 # Markup
 gem 'haml-rails'
-#gem 'RedCloth'
+gem 'less-rails-bootstrap'
 gem 'formtastic'
+gem 'formtastic-bootstrap', git: 'git://github.com/cgunther/formtastic-bootstrap.git', branch: 'bootstrap-2'
 gem 'jquery-rails'
-gem 'cocoon', '~> 1.0.5'
-#gem 'simple-navigation'
+gem 'cocoon'
 
 # Structure
-gem 'acts-as-taggable-on', '~> 2.1.1'
+gem 'acts-as-taggable-on'
 #gem 'friendly_id'
-gem 'kaminari', '~> 0.12.4'
+gem 'kaminari'
+gem 'simple-navigation'
 
 # I18n
 gem 'i18n_routing', '~> 0.5.0'
@@ -41,13 +54,13 @@ group :development do
   gem 'ruby-debug19'
 end
 
-# Development and Test gems
+# Development and test gems
 group :development, :test do
   gem 'rspec-rails'
 end
 
 # Test gems
-group :development, :test do
+group :test do
   gem 'cucumber-rails'
   gem 'machinist', '>= 2.0.0.beta2'
   gem 'database_cleaner'

@@ -1,18 +1,17 @@
-= semantic_form_for @transaction do |form|
-  = form.inputs :name => Transaction.model_name.human do
-    = form.input :timestamp, :as => :string
-    = form.input :vendor_name, :as => :string
+= semantic_form_for(@transaction, html: { class: "form-horizontal" }) do |form|
+  = form.semantic_errors
+  = form.semantic_errors :base
 
-    = form.input :tag_list
+  = form.input :timestamp, as: :string
+  = form.input :vendor_name, as: :string
+  = form.input :tag_list
+  = form.input :description
 
-    = form.input :description
-    = form.inputs :name => TransactionItem.model_name.human do
-      = form.semantic_fields_for :transaction_items do |item|
-        = render 'transaction_item_fields', :f => item
-    = form.buttons do
-      = form.submit :class => "btn primary"
-      = link_to_add_association 'Add item', form, :transaction_items, {                         |
-        "data-association-insertion-node" => "form.transaction>.inputs>ol>.inputs>ol>div:last", |
-        "data-association-insertion-method" => "after",                                         |
-        :class => "btn"                                                                         |
-      }                                                                                         |
+  = form.inputs :name => "Transaktionsdelar" do
+    = form.semantic_fields_for :transaction_items do |item|
+      = render 'transaction_item_fields', :f => item
+    .links
+      = link_to_add_association 'Lägg till transaktionsdel', form, :transaction_items
+
+  = form.buttons do
+    = form.commit_button button_html: { class: "btn-primary" }
